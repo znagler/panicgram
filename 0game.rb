@@ -22,4 +22,4 @@ class Game
 end
 
 a = Game.new
-p a.game_string
+p a.original_gs
