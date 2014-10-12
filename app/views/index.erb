@@ -5,11 +5,12 @@
 <body>
   <div id="wrapper">
     <div id="wordstringdiv">
-    <p id="wordstring">A B C D E</p>
+  <p id="wordstring"><%=  @playstring  %></p>
+
   </div>
 
-  <form id="formz">
-    <input type="text" id="inputz" name="firstname" maxlength="15"><br>
+   <form id="formz" action="/" method="post">
+    <input name="word_input" type="text" id="inputz" maxlength="15" autocomplete="off" autofocus><br>
   </form>
   </div>
 </body>
