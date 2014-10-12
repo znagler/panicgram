@@ -1,14 +1,13 @@
 get '/' do
-  game_on = Game.new
-  @playstring = game_on.current_gs[-5..-1]
+  session[:status] = ""
+  session[:playstring] = Game.generate_string(25)
   erb :index
 end
 
 
 get '/play' do
-  redirect '/' if session[:word].nil?
-
-  @playstring = session[:word]
+  # redirect '/' if session[:word].nil?
+  session[:status] = Game.get_status(session[:input].upcase)
   # @playstring = "true"
 
   # @playstring = "fake" if Word.find_by(word: session[:word]).nil?
@@ -16,8 +15,8 @@ get '/play' do
 end
 
 post '/' do
-  # session[:status] = game_on.current_gs
-  session[:word] = Game.test(params[:word_input])
+  session[:status] = ""
+  session[:input] = params[:word_input]
   redirect '/play'
 end
 

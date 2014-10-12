@@ -1,17 +1,15 @@
 class Game
-  attr_reader :original_gs, :current_gs, :status
+  # attr_reader :original_gs, :current_gs, :status
+  class << self
 
-
-
-
-  def initialize
-    p "wtf"
-    @original_gs = generate_string(25)
-    @jumps = 0
-    @status = "All good"
-    @current_gs = @original_gs
-    # play
-  end
+  # def initialize
+  #   p "wtf"
+  #   @original_gs = generate_string(25)
+  #   @jumps = 0
+  #   @status = "All good"
+  #   @current_gs = @original_gs
+  #   # play
+  # end
 
   def generate_string(desired_length)
     str = ""
@@ -25,50 +23,31 @@ class Game
     end
   end
 
-  class << self
-
-  def test(str)
-    "hi"
+  def get_status(str)
+    return "nice jump" if str == "J"
+    return "fake" if Word.find_by(word: str).nil?
+    "all good"
 
   end
 
 
 
-
-
-  def analyze_input(input_string,gamestring)
-    if input_string == "j"
-
-    end
+  def analyze_input(input_string)
+    return "jump" if input_string == "j"
 
 
   end
 
-  def self.upc(str)
-    str.upcase
-  end
 
 
   def shift(int)
     @current_gs = @current_gs[0..(@current_gs.length-int)]
   end
 
-  def take_input
-    gets.chomp
+
+
+
   end
-
-  def play
-    while @current_gs.length > 0
-      p @current_gs.length
-      puts "Current string: #{@current_gs[-5..0]}"
-      shift(take_input.length)
-      @current_gs = @current_gs[0..-2]
-
-    end
-  end
-  end
-
-
 end
 
 # a = Game.new

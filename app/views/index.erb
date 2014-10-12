@@ -6,7 +6,7 @@
   <div id="wrapper">
     <center><p><%= session[:status] %></p></center>
     <div id="wordstringdiv">
-  <p id="wordstring"><%=  @playstring  %></p>
+  <p id="wordstring"><%= session[:playstring][-5..-1]  %></p>
 
   </div>
 
