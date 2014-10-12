@@ -7,13 +7,17 @@ end
 
 get '/play' do
   redirect '/' if session[:word].nil?
-  @playstring = "true"
-  @playstring = "fake" if Word.find_by(word: session[:word]).nil?
+
+  @playstring = session[:word]
+  # @playstring = "true"
+
+  # @playstring = "fake" if Word.find_by(word: session[:word]).nil?
   erb :index
 end
 
 post '/' do
-  session[:word] = params[:word_input].upcase
+  # session[:status] = game_on.current_gs
+  session[:word] = Game.test(params[:word_input])
   redirect '/play'
 end
 

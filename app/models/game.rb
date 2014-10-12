@@ -1,11 +1,14 @@
 class Game
-  attr_reader :original_gs, :current_gs
+  attr_reader :original_gs, :current_gs, :status
+
+
+
 
   def initialize
     p "wtf"
     @original_gs = generate_string(25)
     @jumps = 0
-    @current_gs = "test"
+    @status = "All good"
     @current_gs = @original_gs
     # play
   end
@@ -22,6 +25,17 @@ class Game
     end
   end
 
+  class << self
+
+  def test(str)
+    "hi"
+
+  end
+
+
+
+
+
   def analyze_input(input_string,gamestring)
     if input_string == "j"
 
@@ -29,6 +43,11 @@ class Game
 
 
   end
+
+  def self.upc(str)
+    str.upcase
+  end
+
 
   def shift(int)
     @current_gs = @current_gs[0..(@current_gs.length-int)]
@@ -46,6 +65,7 @@ class Game
       @current_gs = @current_gs[0..-2]
 
     end
+  end
   end
 
 
