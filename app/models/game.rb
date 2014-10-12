@@ -23,12 +23,25 @@ class Game
     end
   end
 
-  def get_status(str)
-    return "nice jump" if str == "J"
-    return "fake" if Word.find_by(word: str).nil?
-    "all good"
-
+  def get_status_int(str)
+    return 1 if str == "J"
+    return 2 if str.length < 5
+    return 3 if Word.find_by(word: str).nil?
+    4
   end
+
+  def get_status_string(int)
+  case int
+  when 1
+    "jump attempted"
+  when 2
+    "Too short"
+  when 3
+    "Fake word"
+  when 4
+    "All good"
+  end
+end
 
 
 

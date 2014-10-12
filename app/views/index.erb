@@ -6,12 +6,14 @@
   <div id="wrapper">
     <center><p><%= session[:status] %></p></center>
     <div id="wordstringdiv">
-  <p id="wordstring"><%= session[:playstring][-5..-1]  %></p>
+  <p id="wordstring"><%= session[:playstring][-0..4]  %></p>
 
   </div>
 
    <form id="formz" action="/" method="post">
     <input name="word_input" type="text" id="inputz" maxlength="15" autocomplete="off" autofocus><br>
   </form>
+    <center><p><%= session[:playstring] %></p></center>
+    <center><p><%= "Jumps: #{session[:jumps]}" %></p></center>
   </div>
 </body>
