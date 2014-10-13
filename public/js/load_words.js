@@ -7,21 +7,15 @@ $.get( "/dictionary5.txt", function( txt ) {
     // And add them as properties to the dictionary lookup
     // This will allow for fast lookups later
     for ( var i = 0; i < words.length; i++ ) {
-        dict[words[i]] = true;
+        dict[words[i].trim()] = true;
     }
     // for ( var i = 0; i < words.length; i++ ) {
     //     console.log(dict[words[i]]);
     // }
-    var test = "APPLE";
 
-    console.log(words[345]);
-    console.log(words);
-    console.log(dict);
     // console.log(words.indexOf('ABACI'))
-    // console.log(dict[words[10]]);
     console.log(typeof words[10]);
-    console.log(dict[test]);
-    debugger;
+    console.log(dict["TELEPHONE"]);
 
     // The game would start after the dictionary was loaded
     // startGame();

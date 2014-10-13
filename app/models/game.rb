@@ -2,6 +2,12 @@ class Game
   # attr_reader :original_gs, :current_gs, :status
   class << self
 
+    def advance(str,int)
+      int.times { str = str[1..-1] }
+      str
+
+    end
+
   # def initialize
   #   p "wtf"
   #   @original_gs = generate_string(25)
