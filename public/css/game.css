@@ -1,6 +1,11 @@
+
+
+
+
 body {
   background-color: #E4EFAF
 }
+
 
 #empty{
   width:100%;
@@ -24,6 +29,7 @@ body {
 }
 
 #wordstring{
+  margin-left: 500px;
   text-align: center;
    font-size: 150px;
    color:#34007F;
