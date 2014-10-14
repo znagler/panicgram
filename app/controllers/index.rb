@@ -1,8 +1,4 @@
 get '/' do
-
-  session[:status] = ""
-  session[:jumps] = 0
-  session[:playstring] = Game.generate_string(10)
   erb :index
 end
 
@@ -27,20 +23,25 @@ end
 #   erb :index
 # end
 
-post '/' do
-  session[:loaded] = "true"
+# post '/' do
+#   session[:loaded] = "true"
 
-  # session[:status] = ""
-  # session[:input] = params[:word_input]
-  redirect '/'
-end
+#   # session[:status] = ""
+#   # session[:input] = params[:word_input]
+#   redirect '/'
+# end
 
 
 get '/reset' do
 
+  # response.set_cookie 'app', 0
+  # response.set_cookie Gam, 0
+
   session[:status] = ""
   session[:jumps] = 0
   session[:loaded] = ""
+  # session[:playstring] = Game.generate_string(10)
+  session[:playstring] = "abcdefghijklmnopqrstuvwxyz"
   redirect '/'
 
 end

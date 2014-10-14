@@ -29,11 +29,12 @@ body {
 }
 
 #wordstring{
+  /*text-align: left;*/
   margin-left: 500px;
-  text-align: center;
+  text-align: left;
    font-size: 150px;
    color:#34007F;
-   font-family: 'Duru Sans';
+   font-family: 'PT Mono';
 
 }
 #wordstringdiv{
@@ -42,4 +43,6 @@ body {
   /*background-color: blue*/
 
 }
+
+p.hide {display: none;}
 

@@ -8,11 +8,10 @@ $.get( "/dictionary5.txt", function( txt ) {
         dict[words[i].trim()] = true;
         // localStorage.setItem(words[i].trim(),true);
     }
-
     localStorage.setItem('dict', JSON.stringify(dict));
-
     console.log("words loaded")
   });
+
 
 
 });
