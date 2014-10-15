@@ -27,11 +27,21 @@
     prev = $("span").text()
     $("span").text("")
 
-    $("#first_2").text("__")
+    // $("#first_2").text("").append("&nbsp;&nbsp;")
+    $("#first_2").html("&nbsp;&nbsp;")
     $("#first_2").removeAttr('style')
     // $("#first_2").show()
     $("#third").text(prev.charAt(2))
     $("#last_2").text(prev.substring(3,5))
+    //hidestring
+    hidestring=$("#hidestring").text()
+    two_extra = hidestring.substring(5,7)
+    $("#hidestring").text(hidestring.substring(2))
+    //
+    $("#extras").text(two_extra)
+    $(".wordstring").animate(
+      {'marginLeft':"170px"},"slow");
+    // $(.wordstring).removeAttr('style')
 
 
     // string = $(".wordstring").text()
@@ -45,8 +55,7 @@
 
 
 
-    // $(".wordstring").animate(
-    //   {'marginLeft':"50px"},"slow");
+
     // $(".wordstring").append("       "+string.substring(5,8))
 
 
