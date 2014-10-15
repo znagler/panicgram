@@ -2,8 +2,20 @@
 
     function analyze(entry) {
       if (entry === true){
-        eat_letters()
+        console.log("fadez")
+        $('#first_2').css('background-color','blue')
+        setTimeout(function(){$("#first_2").fadeOut( "slow", function() {
+  })()}, 500);
+        // $(".wordstring").prepend("__")
+        // document.getElementById( '#first_2 ).style.display = 'inline';
+        setTimeout(function(){$("#first_2").prepend("__")}, 1000);
+        setTimeout(function(){eat_letters()}, 1000);
+
+        //
         $('#statusz').text("Real word")
+
+
+
       } else {
       $('#statusz').text("Fake word")
       }
@@ -13,19 +25,21 @@
   function eat_letters(){
     console.log(document.cookie)
 
-    string = $("#wordstring").text()
-    $("#wordstring").text(string.substring(3))
-    string = $("#hidestring").text()
-    $("#hidestring").text(string.substring(3))
+
+    // string = $(".wordstring").text()
+    // console.log(string)
+    // $(".wordstring").text("       "+string.substring(7))
+    // string = $("#hidestring").text()
+    // $("#hidestring").text(string.substring(2))
+    // // $(".wordstring").css('marginLeft','50px');
 
 
 
 
 
-    $("#wordstring").css('marginLeft','750px');
-    $("#wordstring").animate(
-      {'marginLeft':"500px"},"slow");
-    $("#wordstring").append(string.substring(5,8))
+    // $(".wordstring").animate(
+    //   {'marginLeft':"50px"},"slow");
+    // $(".wordstring").append("       "+string.substring(5,8))
 
 
   }
@@ -37,6 +51,7 @@
 
   $( "#formz" ).submit(function( event ) {
     event.preventDefault()
+    console.log("wtf")
     console.log("word submitted...")
   var entry = $('#inputz').val().toUpperCase();
   console.log(entry)

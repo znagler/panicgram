@@ -1,4 +1,4 @@
-<head>
+`<head>
   <title>Word Game </title>
   <% if session[:loaded]!= "true" %>
   <script src="/js/load_words.js"></script>
@@ -11,8 +11,7 @@
     <center><p><%= session[:status] %></p></center>
     <center><p id="statusz">Welcome</p></center>
     <div id="wordstringdiv">
-  <p id="wordstring"><%= session[:playstring][0..4]%></p>
-  <p id = "hidestring"class="hide"><%= session[:playstring]%></p>
+  <p class="wordstring">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="all_5"><span id="first_3"><span id="first_2"><%=session[:playstring][0..1]%></span><%=session[:playstring][2]%></span><%=session[:playstring][3..4]%></span></p><p id = "hidestring"class="hide"><%=session[:playstring]%></p>
 
   </div>
 
@@ -20,6 +19,6 @@
     <input type="text" id="inputz" maxlength="15" autocomplete="off" autofocus><br>
   </form>
     <center><p><%= session[:playstring] %></p></center>
-    <center><p><%= "Jumps: #{session[:jumps]}" %></p></center>
+    <center><p><%= "Jumps: #{session[:jumps]}"%></p></center>
   </div>
 </body>

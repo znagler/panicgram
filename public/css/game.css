@@ -28,9 +28,9 @@ body {
   color:#34007F;
 }
 
-#wordstring{
+.wordstring{
   /*text-align: left;*/
-  margin-left: 500px;
+  margin-left: 50px;
   text-align: left;
    font-size: 150px;
    color:#34007F;
@@ -43,6 +43,8 @@ body {
   /*background-color: blue*/
 
 }
+
+
 
 p.hide {display: none;}
 
