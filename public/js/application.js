@@ -24,13 +24,14 @@
 
 
   function eat_letters(){
+    prev = $("span").text()
     $("span").text("")
 
-    $("#first_2").text("||")
+    $("#first_2").text("__")
     $("#first_2").removeAttr('style')
     // $("#first_2").show()
-    $("#third").text("c")
-    $("#last_2").text("de")
+    $("#third").text(prev.charAt(2))
+    $("#last_2").text(prev.substring(3,5))
 
 
     // string = $(".wordstring").text()
