@@ -11,7 +11,10 @@
     <center><p><%= session[:status] %></p></center>
     <center><p id="statusz">Welcome</p></center>
     <div id="wordstringdiv">
-  <p class="wordstring">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="all_5"><span id="first_3"><span id="first_2"><%=session[:playstring][0..1]%></span><%=session[:playstring][2]%></span><%=session[:playstring][3..4]%></span></p><p id = "hidestring"class="hide"><%=session[:playstring]%></p>
+  <p class="wordstring"><span id="first_2"><%=session[:playstring][0..1]%></span><span id="third"><%=session[:playstring][2]%></span><span id="last_2"><%=session[:playstring][3..4]%></span></p>
+
+
+  <p id = "hidestring"class="hide"><%=session[:playstring]%></p>
 
   </div>
 

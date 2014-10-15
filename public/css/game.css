@@ -29,8 +29,7 @@ body {
 }
 
 .wordstring{
-  /*text-align: left;*/
-  margin-left: 50px;
+  margin-left: 350px;
   text-align: left;
    font-size: 150px;
    color:#34007F;
@@ -40,7 +39,6 @@ body {
 #wordstringdiv{
   height:250px;
   margin-top: 175px;
-  /*background-color: blue*/
 
 }
 

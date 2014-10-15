@@ -4,15 +4,16 @@
       if (entry === true){
         console.log("fadez")
         $('#first_2').css('background-color','blue')
-        setTimeout(function(){$("#first_2").fadeOut( "slow", function() {
-  })()}, 500);
+        $("#first_2").fadeOut(function() {
+        eat_letters()
+});
         // $(".wordstring").prepend("__")
         // document.getElementById( '#first_2 ).style.display = 'inline';
-        setTimeout(function(){$("#first_2").prepend("__")}, 1000);
-        setTimeout(function(){eat_letters()}, 1000);
+        // setTimeout(function(){$("#first_2").prepend("__")}, 1000);
+        // setTimeout(function(){eat_letters()}, 1000);
 
         //
-        $('#statusz').text("Real word")
+        // $('span').text("")
 
 
 
@@ -23,7 +24,13 @@
 
 
   function eat_letters(){
-    console.log(document.cookie)
+    $("span").text("")
+
+    $("#first_2").text("||")
+    $("#first_2").removeAttr('style')
+    // $("#first_2").show()
+    $("#third").text("c")
+    $("#last_2").text("de")
 
 
     // string = $(".wordstring").text()
