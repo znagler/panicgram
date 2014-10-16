@@ -1,8 +1,16 @@
+  function set_hidestring_and_extras(integer){
+    hidestring=$("#hidestring").text()
+    extras = hidestring.substring(5,5+integer)
+    $("#hidestring").text(hidestring.substring(integer))
+    $("#extras").text(extras)
+  }
+
+
+
   function analyze(valid,entry) {
     if (valid ){
        $('#statusz').text("Real word")
     }
-
       if (valid && entry==="APPLE"){
         shift(2)
       } else if (valid && entry==="HELLO"){
@@ -11,7 +19,9 @@
         else if (valid && entry==="MONEY"){
           shift(5)
       }
+      else {
       $('#statusz').text("Fake word")
+      }
     }
 
     function shift(integer){
@@ -40,53 +50,34 @@
   function eat_letters(integer){
     console.log("eat letters kicked off")
     prev = $("span").text()
+    $("#first_2").html("&nbsp;&nbsp;")
     switch (integer){
       case 2:
-    $("span").text("")
-    /// Add spaces
-    $("#first_2").html("&nbsp;&nbsp;")
     $("#first_2").removeAttr('style')
     $("#third").text(prev.charAt(2))
     $("#last_2").text(prev.substring(3,5))
-    //hidestring -----------------
-    hidestring=$("#hidestring").text()
-    two_extra = hidestring.substring(5,7)
-    $("#hidestring").text(hidestring.substring(2))
-    //-----------------------------
-    $("#extras").text(two_extra)
+    set_hidestring_and_extras(2)
     $(".wordstring").animate(
       {'marginLeft':"180px"},"slow",null,function() {
         reset()})
     break
       case 3:
-      $("#first_2").html("&nbsp;&nbsp;")
-      $("#third").html("&nbsp;")
-      $("#first_2,#third").removeAttr('style')
-      $("#last_2").text(prev.substring(3,5))
-      //hidestring -----------------
-      hidestring=$("#hidestring").text()
-      three_extra = hidestring.substring(5,8)
-      $("#hidestring").text(hidestring.substring(3))
-      //-----------------------------
-      $("#extras").text(three_extra)
-      $(".wordstring").animate(
-      {'marginLeft':"90px"},"slow",null,function() {
-        reset()})
+        $("#third").html("&nbsp;")
+        $("#first_2,#third").removeAttr('style')
+        $("#last_2").text(prev.substring(3,5))
+        set_hidestring_and_extras(3)
+        $(".wordstring").animate(
+        {'marginLeft':"90px"},"slow",null,function() {
+          reset()})
       break
       case 5:
-      $("#first_2").html("&nbsp;&nbsp;")
-      $("#third").html("&nbsp;")
-      $("#last_2").html("&nbsp;&nbsp;")
-      $("#first_2,#third,#last_2").removeAttr('style')
-      //hidestring -----------------
-      hidestring=$("#hidestring").text()
-      five_extra = hidestring.substring(5,10)
-      $("#hidestring").text(hidestring.substring(5))
-      //-----------------------------
-      $("#extras").text(five_extra)
-      $(".wordstring").animate(
-      {'marginLeft':"-90px"},"slow",null,function() {
-        reset()})
+        $("#third").html("&nbsp;")
+        $("#last_2").html("&nbsp;&nbsp;")
+        $("#first_2,#third,#last_2").removeAttr('style')
+        set_hidestring_and_extras(5)
+        $(".wordstring").animate(
+        {'marginLeft':"-90px"},"slow",null,function() {
+          reset()})
       break
     }
 

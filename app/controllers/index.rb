@@ -1,4 +1,5 @@
 get '/' do
+  redirect '/reset' if session[:playstring].nil?
   erb :index
 end
 
