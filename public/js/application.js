@@ -3,6 +3,11 @@ function playOn(){
   var entry = $('#inputz').val().toUpperCase();
   var store_dict = localStorage.getItem('dict');
   var dict = JSON.parse(store_dict);
+  $("#inputz").val("")
+  if (entry === "J"){
+    Animate.shift(1)
+    return
+  }
   if (dict[entry]){
     $('#statusz').text("Real word")
     var next_five = $('#hidestring').text().substring(0,5).toUpperCase()
@@ -11,7 +16,6 @@ function playOn(){
   else{
       $('#statusz').text("Fake word")
     }
-  $("#inputz").val("")
 }
 
 $(document).ready(function() {

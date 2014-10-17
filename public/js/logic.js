@@ -8,7 +8,7 @@ var Logic = {
     console.log(entry)
     console.log("next")
     console.log(next_five)
-    return 1
+    return 2
   }
 }
 
