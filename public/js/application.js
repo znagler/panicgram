@@ -5,8 +5,9 @@ function playOn(){
   var dict = JSON.parse(store_dict);
   if (dict[entry]){
     $('#statusz').text("Real word")
-    var shift_length = Logic.analyze(entry)
-    shift(shift_length);}
+    var next_five = $('#hidestring').text().substring(0,5).toUpperCase()
+    var shift_length = Logic.analyze(entry,next_five)
+    Animate.shift(shift_length);}
   else{
       $('#statusz').text("Fake word")
     }
