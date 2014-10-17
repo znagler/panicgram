@@ -1,3 +1,6 @@
+ // var Animate = {
+
+
   function set_hidestring_and_extras(integer){
     hidestring=$("#hidestring").text()
     extras = hidestring.substring(5,5+integer)
@@ -5,24 +8,6 @@
     $("#extras").text(extras)
   }
 
-
-
-  function analyze(valid,entry) {
-    if (valid ){
-       $('#statusz').text("Real word")
-    }
-      if (valid && entry==="APPLE"){
-        shift(2)
-      } else if (valid && entry==="HELLO"){
-        shift(3)
-      }
-        else if (valid && entry==="MONEY"){
-          shift(5)
-      }
-      else {
-      $('#statusz').text("Fake word")
-      }
-    }
 
     function shift(integer){
       switch (integer){
@@ -36,7 +21,6 @@
         $.when( $("#first_2").fadeOut(), $("#third").fadeOut() ).done(function() {
         eat_letters(integer)
         });
-
         break;
         case 5:
         $('#first_2,#third,#last_2').css('background-color','yellow')
@@ -60,8 +44,8 @@
     $(".wordstring").animate(
       {'marginLeft':"180px"},"slow",null,function() {
         reset()})
-    break
-      case 3:
+      break
+    case 3:
         $("#third").html("&nbsp;")
         $("#first_2,#third").removeAttr('style')
         $("#last_2").text(prev.substring(3,5))
@@ -70,7 +54,7 @@
         {'marginLeft':"90px"},"slow",null,function() {
           reset()})
       break
-      case 5:
+    case 5:
         $("#third").html("&nbsp;")
         $("#last_2").html("&nbsp;&nbsp;")
         $("#first_2,#third,#last_2").removeAttr('style')
