@@ -1,13 +1,21 @@
 function playOn(){
   // logic = new Logic
   var entry = $('#inputz').val().toUpperCase();
+  console.log(localStorage.getItem('I <3'))
+  //example one//
   var store_dict = localStorage.getItem('dict');
   var dict = JSON.parse(store_dict);
   $("#inputz").val("")
+
+
+
+
   if (entry === "J"){
     Animate.shift(1)
     return
   }
+
+  //example 2
   if (dict[entry]){
     $('#statusz').text("Real word")
     var next_five = $('#hidestring').text().substring(0,5).toUpperCase()
