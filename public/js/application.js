@@ -27,9 +27,38 @@ function playOn(){
     }
 }
 
+function generateString(stringLength){
+  str = ""
+  letterOne = "bbccddddffggghhjkllllmmnnnnnnpprrrrrrssssttttttvwy".split("")
+  letterTwo = "bbccddddffggghhllllmmnnnnnnpprrrrrrsssstttttt".split("")
+  letterThree = "aaaaaaaaaeeeeeeeeeeeeiiiiiiiiioooooooouuuu".split("")
+  while (true){
+    str += letterOne[Math.floor(Math.random()*letterOne.length)]
+    if (str.length==stringLength) return str
+    str += letterTwo[Math.floor(Math.random()*letterTwo.length)]
+    if (str.length==stringLength) return str
+    str += letterThree[Math.floor(Math.random()*letterThree.length)]
+    if (str.length==stringLength) return str
+  }
+}
+
+function initialSetup(){
+  var playString = generateString(25)
+  $("#hidestring").text(playString)
+  $("#playstring").text(playString)
+  Animate.reset()
+}
+
+
+
 $(document).ready(function() {
+
+  initialSetup()
   $( "#formz" ).submit(function( event ) {
   event.preventDefault()
+
+
+
   playOn()
   })
 });

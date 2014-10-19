@@ -8,22 +8,21 @@
 </head>
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=PT Mono|Duru Sans">
 <body>
-
   <div id="wrapper">
-    <center><p><%= session[:status] %></p></center>
     <center><p id="statusz">Welcome</p></center>
     <div id="wordstringdiv">
-  <p class="wordstring"><span id="first"><%=session[:playstring][0]%></span><span id="second"><%=session[:playstring][1]%></span><span id="third"><%=session[:playstring][2]%></span><span id="last_2"><%=session[:playstring][3..4]%></span><span id="extras"></span></p>
+  <p class="wordstring"><span id="first"></span><span id="second"></span><span id="third"></span><span id="last_2"></span><span id="extras"></span></p>
 
 
-  <p id = "hidestring"class="hide"><%=session[:playstring]%></p>
+
 
   </div>
 
    <form id="formz">
     <input type="text" id="inputz" maxlength="15" autocomplete="off" autofocus><br>
   </form>
-    <center><p><%= session[:playstring] %></p></center>
+     <center><p id = "hidestring" class="hide"></p></center>
+    <center><p id="playstring"></p></center>
     <center><p>Jumps: <span id="jumps">0</span></p></center>
   </div>
 </body>
