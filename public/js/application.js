@@ -43,10 +43,17 @@ function generateString(stringLength){
 }
 
 function initialSetup(){
-  var playString = generateString(25)
+  var playString = generateString(15)
   $("#hidestring").text(playString)
   $("#playstring").text(playString)
   Animate.reset()
+}
+
+function regenerateSmallString(){
+  if ($("#hidestring").text().length < 10){
+  newString = generateString(15)
+  $("#hidestring").append(newString)
+  }
 }
 
 
@@ -57,9 +64,10 @@ $(document).ready(function() {
   $( "#formz" ).submit(function( event ) {
   event.preventDefault()
 
-
-
   playOn()
+  regenerateSmallString()
+
+  // console.log($("#hidestring").text().length)
   })
 });
 
