@@ -74,12 +74,8 @@ return str.substring(1)
 
 function initialSetup(){
   weightedLetters = "aaaaaaaaabbccccccddddeeeeeeeeeeeeffffggghhiiiiiiiiijkllllmmnnnnnnooooooooppppqrrrrrrssssssttttttuuuuvvwwxyz"
-
   $("#hidestring").text(weightedLetters[Math.floor(Math.random()*weightedLetters.length)])
-  // var playString += moreLetters(12)
   regenerateSmallString()
-  // $("#hidestring").text(playString)
-  // $("#playstring").text(playString)
   Animate.reset()
 }
 
