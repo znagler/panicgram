@@ -43,9 +43,13 @@ function generateString(stringLength){
 }
 
 function initialSetup(){
+  weightedLetters = "aaaaaaaaabbccccccddddeeeeeeeeeeeeffffggghhiiiiiiiiijkllllmmnnnnnnooooooooppppqrrrrrrssssssttttttuuuuvvwwxyz"
+
+  $("#hidestring").text(weightedLetters[Math.floor(Math.random()*weightedLetters.length)])
   var playString = generateString2(15)
-  $("#hidestring").text(playString)
-  $("#playstring").text(playString)
+  regenerateSmallString()
+  // $("#hidestring").text(playString)
+  // $("#playstring").text(playString)
   Animate.reset()
 }
 
@@ -131,16 +135,18 @@ all: [].concat(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z)
 }
 
 weighted_random = nextLetters.all
-str = weighted_random[Math.floor(Math.random()*weighted_random.length)]
+str = $("#hidestring").text()
+console.log(str)
 
 while (str.length <= stringLength){
   var last_letter = "arr_"+str.slice(-1)
+
   var random_arr = nextLetters[last_letter]
   // str+= "a"
   str += random_arr[Math.floor(Math.random()*random_arr.length)]
   // str+= r[last_letter][Math.floor(Math.random()*nextLetters[last_letter].length)]
 }
-return str
+return str.substring(1)
 
 }
 
