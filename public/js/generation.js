@@ -1,5 +1,6 @@
 
 function moreLetters(stringLength){
+  // can only be called when hidestring has at least one letter
 a = ["a","a","a","a","a","a","a","a","a"]
 b = ["b","b"]
 c = ["c","c","c","c","c","c"]
@@ -45,7 +46,7 @@ arr_o: [].concat(a,b,c,d,f,g,i,k,l,m,n,o,p,r,s,t,u,v,w,x,y,z),
 arr_p: [].concat(a,e,h,i,l,o,p,r,s,u,y),
 arr_q: [].concat(u),
 arr_r: [].concat(a,d,e,i,k,l,m,n,o,p,r,s,t,u,v,y),
-arr_s: [].concat(a,e,h,i,k,l,m,n,o,p,s,t,u,w,y),
+arr_s: [].concat(a,e,h,i,k,l,m,n,o,p,q,s,t,u,w,y),
 arr_t: [].concat(a,e,h,i,o,r,s,t,u,w),
 arr_u: [].concat(b,c,d,f,g,i,k,l,m,n,p,r,s,t),
 arr_v: [].concat(a,e,i,o),
@@ -56,9 +57,8 @@ arr_z: [].concat(a,e,o),
 all: [].concat(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z)
 }
 
-weighted_random = nextLetters.all
-str = $("#hidestring").text()
-console.log(str)
+str = ($("#hidestring").text()).slice(-1)
+// console.log(str)
 
 while (str.length <= stringLength){
   var last_letter = "arr_"+str.slice(-1)
@@ -75,7 +75,7 @@ return str.substring(1)
 function initialSetup(){
   weightedLetters = "aaaaaaaaabbccccccddddeeeeeeeeeeeeffffggghhiiiiiiiiijkllllmmnnnnnnooooooooppppqrrrrrrssssssttttttuuuuvvwwxyz"
   $("#hidestring").text(weightedLetters[Math.floor(Math.random()*weightedLetters.length)])
-  regenerateSmallString()
+  $("#hidestring").append(moreLetters(12))
   Animate.reset()
 }
 

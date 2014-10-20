@@ -19,19 +19,19 @@
         break;
       case 2:
        $('#first,#second').css('background-color','blue')
-        $.when( $("#first").fadeOut(), $("#second").fadeOut()).done(function() {
+        $.when( $("#first").fadeOut("fast"), $("#second").fadeOut("fast")).done(function() {
         Animate.eat_letters(integer)
         });
         break;
         case 3:
         $('#first,#second,#third').css('background-color','red')
-        $.when( $("#first").fadeOut(), $("#second").fadeOut(),$("#third").fadeOut() ).done(function() {
+        $.when( $("#first").fadeOut("fast"), $("#second").fadeOut("fast"),$("#third").fadeOut("fast") ).done(function() {
         Animate.eat_letters(integer)
         });
         break;
         case 5:
         $('#first,#second,#third,#last_2').css('background-color','yellow')
-        $.when( $("#first").fadeOut(),$("#second").fadeOut(), $("#third").fadeOut(),$("#last_2").fadeOut()).done(function() {
+        $.when( $("#first").fadeOut("fast"),$("#second").fadeOut("fast"), $("#third").fadeOut("fast"),$("#last_2").fadeOut("fast")).done(function() {
         Animate.eat_letters(integer)
         });
         break;
@@ -61,7 +61,7 @@
     $("#last_2").text(prev.substring(3,5))
     Animate.set_hidestring_and_extras(2)
     $(".wordstring").animate(
-      {'marginLeft':"180px"},"slow",null,function() {
+      {'marginLeft':"180px"},"fast",null,function() {
         Animate.reset()})
       break
     case 3:
@@ -74,7 +74,7 @@
         $("#last_2").text(prev.substring(3,5))
         Animate.set_hidestring_and_extras(3)
         $(".wordstring").animate(
-        {'marginLeft':"90px"},"slow",null,function() {
+        {'marginLeft':"90px"},"fast",null,function() {
           Animate.reset()})
       break
     case 5:
@@ -85,7 +85,7 @@
         $("#first,#second,#third,#last_2").removeAttr('style')
         Animate.set_hidestring_and_extras(5)
         $(".wordstring").animate(
-        {'marginLeft':"-90px"},"slow",null,function() {
+        {'marginLeft':"-90px"},"fast",null,function() {
           Animate.reset()})
       break
     }

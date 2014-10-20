@@ -32,6 +32,8 @@ function playOn(){
 
 $(document).ready(function() {
 
+initialSetup()
+
 
 $( "#inputz" ).keypress(function() {
 
@@ -48,14 +50,10 @@ $( "#inputz" ).keypress(function() {
     if ($( "#inputz" ).val().length <5 && $( "#inputz" ).val().toUpperCase()!="J"){
       $( "#inputz" ).css("color","gray")
     }
-    // if ($( "#inputz" ).val() == "J"){
-    //   $( "#inputz" ).css("color","red")
-    // }
 
 
   });
 
-  initialSetup()
   $( "#formz" ).submit(function( event ) {
   event.preventDefault()
 
