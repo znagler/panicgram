@@ -32,15 +32,26 @@ body {
   margin-left: 360px;
   text-align: left;
    font-size: 150px;
-   color:#34007F;
    font-family: 'PT Mono';
-
 }
+
+#first,#second{
+  color: #620037;
+}
+
+#third{
+  color: #882D61;
+}
+
+#last_2,#extras{
+  color: #9B6785
+  }
 #wordstringdiv{
   height:250px;
   margin-top: 175px;
-
 }
+
+
 
 
 
