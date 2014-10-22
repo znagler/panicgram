@@ -10,8 +10,8 @@ post '/win' do
 end
 
 get '/highscores' do
-  @highscores = Score.all
-  erb :_win
+  # @highscores = Score.all
+  # erb :_win
 end
 
 
