@@ -2,7 +2,8 @@ get '/' do
   erb :index
 end
 
-get '/play' do
+get '/play/:time' do
+  redirect '/' if (params[:time]!="10" && params[:time]!="30")
   erb :play
 end
 

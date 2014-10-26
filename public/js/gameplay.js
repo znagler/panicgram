@@ -52,6 +52,10 @@ function checkForWin(){
 }
 
 function addScore(integer){
+  console.log("in add score")
+
+  $('#score-container').append("<div class='score-points'>+"+integer+"</div>")
+  // $('#score').remove()
     new_score = $('#score').data("s") + integer
     $('#score').data("s",new_score)
     console.log(integer)
