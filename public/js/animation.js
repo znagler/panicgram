@@ -1,9 +1,12 @@
  var Animate = {
 
   set_hidestring_and_extras: function(integer){
-    hidestring=$("#hidestring").text()
+    // hidestring=$("#hidestring").text()
+    hidestring=$("#hidestring").data('hs')
     extras = hidestring.substring(5,5+integer)
-    $("#hidestring").text(hidestring.substring(integer))
+    // $("#hidestring").text(hidestring.substring(integer))
+    $("#hidestring").data('hs',hidestring.substring(integer))
+    View.updateHs()
     $("#extras").text(extras)
   },
 
@@ -93,7 +96,7 @@
   },
 
   reset: function(){
-    hidestring=$("#hidestring").text()
+    hidestring=$("#hidestring").data('hs')
     $('.wordstring').removeAttr('style')
     $("#first").text(hidestring.charAt(0))
     $("#second").text(hidestring.charAt(1))

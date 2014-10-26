@@ -17,7 +17,8 @@ function playOn(callback){
   }
   if (dict[entry]){
     $('#statusz').text("Real word")
-    var nextFive = $('#hidestring').text().substring(0,5).toUpperCase()
+
+    var nextFive = $("#hidestring").data('hs').substring(0,5).toUpperCase()
     currentLogic = new logic(entry,nextFive)
     // var shift_length = Logic.analyze(entry,next_five)
     addScore(currentLogic.shiftLength())

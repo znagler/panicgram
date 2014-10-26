@@ -57,7 +57,8 @@ arr_z: [].concat(a,e,o),
 all: [].concat(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z)
 }
 
-str = ($("#hidestring").text()).slice(-1)
+// str = ($("#hidestring").text()).slice(-1)
+str = $("#hidestring").data("hs").slice(-1)
 // console.log(str)
 
 while (str.length <= stringLength){
@@ -74,16 +75,23 @@ return str.substring(1)
 
 function initialSetup(){
   weightedLetters = "aaaaaaaaabbccccccddddeeeeeeeeeeeeffffggghhiiiiiiiiijkllllmmnnnnnnooooooooppppqrrrrrrssssssttttttuuuuvvwwxyz"
-  $("#hidestring").text(weightedLetters[Math.floor(Math.random()*weightedLetters.length)])
-  $("#hidestring").append(moreLetters(12))
+  var randomLetter = weightedLetters[Math.floor(Math.random()*weightedLetters.length)]
+  $("#hidestring").data("hs",randomLetter)
+  // $("#hidestring").text(weightedLetters[Math.floor(Math.random()*weightedLetters.length)])
+  $("#hidestring").data("hs",randomLetter)
+  $("#hidestring").data("hs",moreLetters(12))
+  View.updateHs()
   Animate.reset()
 }
 
 function regenerateSmallString(){
-  if ($("#hidestring").text().length < 10){
-  newString = moreLetters(12)
-  console.log(newString)
-  $("#hidestring").append(newString)
+  if (($("#hidestring").data("hs")).length < 10){
+  var oldLetters = $("#hidestring").data("hs")
+  var newLetters = moreLetters(12)
+
+  $("#hidestring").data("hs",oldLetters+newLetters)
+  View.updateHs
+
   }
 }
 
