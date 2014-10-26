@@ -8,10 +8,11 @@ function playOn(callback){
   var score = parseInt($("#score").text())
   if (entry === "J"  && jumps>0){
     Animate.shift(1)
+    addScore(1)
     jumps--
     score++
     $("#jumps").text(jumps)
-    $("#score").text(score)
+    // $("#score").text(score)
     return
   }
   if (dict[entry]){
@@ -19,10 +20,8 @@ function playOn(callback){
     var nextFive = $('#hidestring').text().substring(0,5).toUpperCase()
     currentLogic = new logic(entry,nextFive)
     // var shift_length = Logic.analyze(entry,next_five)
+    addScore(currentLogic.shiftLength())
     Animate.shift(currentLogic.shiftLength())
-    score = score + currentLogic.shiftLength()
-    console.log(score)
-    $("#score").text(score)
     jumps += currentLogic.addedJumps()
     $("#jumps").text(jumps)
 
@@ -40,11 +39,17 @@ function playOn(callback){
 function checkForWin(){
   var score = parseInt($("#score").text())
   // formData = {test: "string"}
-  if (score >= 25) {
+  if (score >= 10) {
     return true
   }else {
     return false
     }
+}
+
+function addScore(integer){
+    new_score = $('#score').data("score") + integer
+    $('#score').data("score",new_score)
+    $("#score").text($('#score').data("score"))
 }
     // $('#wordstring').text("WINNN")
 

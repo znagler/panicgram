@@ -13,7 +13,6 @@ setKeyEvents()
   if (checkForWin()){
     winGame()
 
-
   }
 
   })
