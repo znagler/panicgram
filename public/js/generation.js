@@ -76,6 +76,7 @@ return str.substring(1)
 function initialSetup(){
   weightedLetters = "aaaaaaaaabbccccccddddeeeeeeeeeeeeffffggghhiiiiiiiiijkllllmmnnnnnnooooooooppppqrrrrrrssssssttttttuuuuvvwwxyz"
   var randomLetter = weightedLetters[Math.floor(Math.random()*weightedLetters.length)]
+  console.log(randomLetter)
   $("#hidestring").data("hs",randomLetter)
   // $("#hidestring").text(weightedLetters[Math.floor(Math.random()*weightedLetters.length)])
   $("#hidestring").data("hs",randomLetter)

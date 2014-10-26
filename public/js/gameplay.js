@@ -4,14 +4,17 @@ function playOn(callback){
   var store_dict = localStorage.getItem('dict');
   var dict = JSON.parse(store_dict);
   $("#inputz").val("")
-  var jumps = parseInt($("#jumps").text())
-  var score = parseInt($("#score").text())
+  // var jumps = parseInt($("#jumps").text())
+  var jumps = parseInt($("#jumps").data("j"))
+  var score = parseInt($("#score").data("s"))
+  // var score = parseInt($("#score").text())
   if (entry === "J"  && jumps>0){
     Animate.shift(1)
     addScore(1)
     jumps--
     score++
-    $("#jumps").text(jumps)
+    $("#jumps").data("j",jumps)
+    View.updateJ()
     // $("#score").text(score)
     return
   }
@@ -20,11 +23,12 @@ function playOn(callback){
 
     var nextFive = $("#hidestring").data('hs').substring(0,5).toUpperCase()
     currentLogic = new logic(entry,nextFive)
-    // var shift_length = Logic.analyze(entry,next_five)
     addScore(currentLogic.shiftLength())
     Animate.shift(currentLogic.shiftLength())
     jumps += currentLogic.addedJumps()
-    $("#jumps").text(jumps)
+    // $("#jumps").text(jumps)
+    $("#jumps").data("j",jumps)
+    View.updateJ()
 
   }
 
@@ -38,9 +42,9 @@ function playOn(callback){
 
 
 function checkForWin(){
-  var score = parseInt($("#score").text())
+  var score = parseInt($("#score").data("s"))
   // formData = {test: "string"}
-  if (score >= 10) {
+  if (score >= 50) {
     return true
   }else {
     return false
@@ -48,9 +52,10 @@ function checkForWin(){
 }
 
 function addScore(integer){
-    new_score = $('#score').data("score") + integer
-    $('#score').data("score",new_score)
-    $("#score").text($('#score').data("score"))
+    new_score = $('#score').data("s") + integer
+    $('#score').data("s",new_score)
+    console.log(integer)
+    View.updateS()
 }
     // $('#wordstring').text("WINNN")
 

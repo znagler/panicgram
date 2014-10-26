@@ -1,7 +1,7 @@
 
 
 $(document).ready(function() {
-
+console.log("in appp")
 initialSetup()
 setKeyEvents()
 
