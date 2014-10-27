@@ -26,7 +26,11 @@ function playOn(callback){
     if (currentLogic.shiftLength() >= 1){
     addScore(currentLogic.shiftLength())
     Animate.shift(currentLogic.shiftLength())
-    jumps += currentLogic.addedJumps()
+    var newJumps = currentLogic.addedJumps()
+    if (newJumps > 0){
+    animateNewJumps(newJumps)
+    }
+    jumps += newJumps
     // $("#jumps").text(jumps)
     $("#jumps").data("j",jumps)
     View.updateJ()
@@ -72,6 +76,18 @@ function addScore(integer){
     $('#score').data("s",new_score)
     console.log(integer)
     View.updateS()
+}
+
+function animateNewJumps(integer){
+  console.log("animating jump...")
+  var r=0
+    var g=0
+    var b=0
+    if (integer === 1) b=255;
+    if (integer === 2) r=255;
+
+    $('#jump-container').append("<div class='score-jumps' style='color: rgba("+r+","+g+","+b+", 0.9)'>+"+integer+"</div>")
+
 }
     // $('#wordstring').text("WINNN")
 

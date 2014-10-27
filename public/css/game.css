@@ -39,7 +39,7 @@ body {
    font-family: 'PT Mono';
 }
 
-p {
+.large-font-format {
    font-size: 30px;
    font-family: 'PT Mono';
 
@@ -85,20 +85,30 @@ p {
     top: -50px;
     opacity: 0; } }
 
-#score-container{
-  position:relative;
-  width:200px;
-  height:20px;
+#jump-score-container{
+  display: inline;
 }
 
-#jumps-container{
+#score-container{
+  display: inline;
   position:relative;
   width:200px;
   height:20px;
+  margin-left: 50px;
 }
+
+#jump-container{
+  display: inline;
+  position:relative;
+  width:200px;
+  height:20px;
+  margin-right: 50px;
+}
+
+
  .score-points {
     position: absolute;
-    right: 30px;
+    left: 113px;
 
     /*top: 500px;*/
 
@@ -113,6 +123,23 @@ p {
     -webkit-animation-fill-mode: both;
     -moz-animation-fill-mode: both;
     animation-fill-mode: both; }
+
+     .score-jumps {
+    position: absolute;
+    right: 1px;
+    /*top: 500px;*/
+    /*color: red;*/
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: bold;
+    z-index: 100;
+    -webkit-animation: move-up 600ms ease-in;
+    -moz-animation: move-up 600ms ease-in;
+    animation: move-up 600ms ease-in;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    animation-fill-mode: both; }
+
 
 /*input[name="username"]::-webkit-input-placeholder  {
     -webkit-transition: opacity 0.3s linear; color: gray;
