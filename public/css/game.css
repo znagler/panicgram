@@ -62,7 +62,7 @@ p {
 
 @-webkit-keyframes move-up {
   0% {
-    top: 25px;
+    top: 10px;
     opacity: 1; }
 
   100% {
@@ -90,17 +90,22 @@ p {
   width:200px;
   height:20px;
 }
+
+#jumps-container{
+  position:relative;
+  width:200px;
+  height:20px;
+}
  .score-points {
     position: absolute;
     right: 30px;
 
     /*top: 500px;*/
 
-    color: red;
+    /*color: red;*/
     font-size: 25px;
     line-height: 25px;
     font-weight: bold;
-    color: rgba(119, 110, 101, 0.9);
     z-index: 100;
     -webkit-animation: move-up 600ms ease-in;
     -moz-animation: move-up 600ms ease-in;
