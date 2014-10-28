@@ -1,0 +1,21 @@
+  <%= javascript_include_tag 'load_words' %>
+<div>
+<center>
+  <p>WELCOME TO WORD GAME</p>
+  <a href="/play/10">New game 10 seconds!</a>
+  <br>
+  <a href="/play/30">New game 30 seconds!</a>
+</center>
+<!-- Button trigger modal -->
+<center>
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Rules
+</button>
+</center>
+ <%= render 'rules_modal' %>
+
+<!-- Modal -->
+
+
+
+</div>

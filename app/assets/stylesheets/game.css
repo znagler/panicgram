@@ -1,0 +1,154 @@
+
+
+
+
+body {
+  background-color: #E4EFAF
+}
+
+.modal-body{
+  background-color: red
+}
+
+
+#empty{
+  width:100%;
+  height:400px;
+  }
+
+#formz{
+/*  margin-top: 150px;*/
+  text-align: center;
+}
+
+#inputz{
+  background-color: #f1f1f2;
+  width:900px;
+  height:120px;
+  font-size: 60px;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'Duru Sans';
+  color:gray;
+}
+
+.wordstring{
+  margin-left: 360px;
+  text-align: left;
+   font-size: 150px;
+   font-family: 'PT Mono';
+}
+
+.large-font-format {
+   font-size: 30px;
+   font-family: 'PT Mono';
+
+}
+#first,#second{
+  color: #620037;
+}
+
+#third{
+  color: #882D61;
+}
+
+#last_2,#extras{
+  color: #9B6785
+  }
+#wordstringdiv{
+  height:250px;
+  margin-top: 175px;
+}
+
+@-webkit-keyframes move-up {
+  0% {
+    top: 10px;
+    opacity: 1; }
+
+  100% {
+    top: -50px;
+    opacity: 0; } }
+@-moz-keyframes move-up {
+  0% {
+    top: 25px;
+    opacity: 1; }
+
+  100% {
+    top: -50px;
+    opacity: 0; } }
+@keyframes move-up {
+  0% {
+    top: 25px;
+    opacity: 1; }
+
+  100% {
+    top: -50px;
+    opacity: 0; } }
+
+#jump-score-container{
+  display: inline;
+}
+
+#score-container{
+  display: inline;
+  position:relative;
+  width:200px;
+  height:20px;
+  margin-left: 50px;
+}
+
+#jump-container{
+  display: inline;
+  position:relative;
+  width:200px;
+  height:20px;
+  margin-right: 50px;
+}
+
+
+ .score-points {
+    position: absolute;
+    left: 113px;
+
+    /*top: 500px;*/
+
+    /*color: red;*/
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: bold;
+    z-index: 100;
+    -webkit-animation: move-up 600ms ease-in;
+    -moz-animation: move-up 600ms ease-in;
+    animation: move-up 600ms ease-in;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    animation-fill-mode: both; }
+
+     .score-jumps {
+    position: absolute;
+    right: 1px;
+    /*top: 500px;*/
+    /*color: red;*/
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: bold;
+    z-index: 100;
+    -webkit-animation: move-up 600ms ease-in;
+    -moz-animation: move-up 600ms ease-in;
+    animation: move-up 600ms ease-in;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    animation-fill-mode: both; }
+
+
+/*input[name="username"]::-webkit-input-placeholder  {
+    -webkit-transition: opacity 0.3s linear; color: gray;
+}*/
+/*input[name="username"]:focus::-webkit-input-placeholder  {
+    opacity: .9;
+}
+*/
+
+
+/*p.hide {display: none;}*/
+
