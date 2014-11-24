@@ -39,6 +39,16 @@ body {
    font-family: 'PT Mono';
 }
 
+.welcomestring{
+  color: #620037;
+   font-size: 100px;
+   font-family: 'PT Mono';
+}
+
+
+
+
+
 .large-font-format {
    font-size: 30px;
    font-family: 'PT Mono';
