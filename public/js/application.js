@@ -20,23 +20,21 @@ setKeyEvents()
 
 
 function winGame(){
+    $( "#formz" ).off()
+    $( "#formz" ).submit(function( event ) {
+      event.preventDefault()
+    });    
   setTimeout(function(){
-
     $.when($(".wordstring").fadeOut("slow")).done(function() {
         $( "#inputz" ).off()
-        // $("#hidestring").text("WIN!!")
-
         $(".wordstring").hide()
-        $(".wordstring").text("WIN!!")
-
+        $(".wordstring").text("WIN")
         $(".wordstring").fadeIn( 2000, function() {
           $("#inputz").attr("placeholder", "Enter username")
           $("#inputz").css("color", "red")
-
-          });
-      });
-
-  }, 500);
+          })
+      })
+  }, 500)
 }
 
 

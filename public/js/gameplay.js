@@ -50,7 +50,7 @@ function playOn(callback){
 function checkForWin(){
   var score = parseInt($("#score").data("s"))
   // formData = {test: "string"}
-  if (score >= 50) {
+  if (score >= 10) {
     return true
   }else {
     return false
@@ -59,10 +59,7 @@ function checkForWin(){
 
 function addScore(integer){
   console.log("in add score")
-    // $('#score-container').
-    //red -> 255,0,0
-    //blue 0,0,255
-    //yellow 255,255,0
+
     var r=0
     var g=0
     var b=0
@@ -89,25 +86,4 @@ function animateNewJumps(integer){
     $('#jump-container').append("<div class='score-jumps' style='color: rgba("+r+","+g+","+b+", 0.9)'>+"+integer+"</div>")
 
 }
-    // $('#wordstring').text("WINNN")
-
-    // Animate.shift(5)
-
-    // $('#statusz').html(
-    //   "<p>You win</p><form><input id='submission' placeholder='name'><input type='submit'></form>"
-    //   )
-
-    //   $( "#submission" ).submit(function( event ) {
-    //     event.preventDefault();
-    //     formData = {"username": $( "#submission" ).val()}
-    //     $.ajax({
-    //       url: '/win',
-    //       type: 'POST',
-    //       data: formData
-    //     })
-    //     .done(function(response) {
-    //       console.log(response);
-    //     })
-
-    //   });
 
