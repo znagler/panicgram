@@ -23,7 +23,7 @@ function winGame(){
 
     Global.endTime = new Date()
     console.log((Global.endTime - Global.startTime) * (1/1000))
-    $('#statusz').text("Final Time: "+((Global.endTime - Global.startTime) * (1/1000))+" seconds")
+    $('#statusz').text("Final Time: "+(Math.round((Global.endTime - Global.startTime) * (1/1000)))+" seconds")
     $( "#formz" ).off()
     $( "#formz" ).submit(function( event ) {
       event.preventDefault()
