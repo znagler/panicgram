@@ -30,12 +30,13 @@ Global.startTime = new Date()
 function winGame(){
 
     Global.endTime = new Date()
-    console.log((Global.endTime - Global.startTime) * (1/1000))
-    $('#statusz').text("Final Time: "+(Math.round((Global.endTime - Global.startTime) * (1/1000)))+" seconds")
+    Global.finalTime = Math.round((Global.endTime - Global.startTime) * (1/1000))
+    console.log(Global.finalTime)
+    $('#statusz').text("Final Time: "+Global.finalTime+" seconds")
     $( "#formz" ).off()
-    $( "#formz" ).submit(function( event ) {
-      event.preventDefault()
-    });    
+    // $( "#formz" ).submit(function( event ) {
+    //   event.preventDefault()
+    // });    
   setTimeout(function(){
     $.when($(".wordstring").fadeOut("slow")).done(function() {
         $( "#inputz" ).off()
@@ -46,13 +47,11 @@ function winGame(){
           $("#inputz").attr("placeholder", "Enter username")
           $("#inputz").css("color", "red")
           $("#formz").addClass( "username" )
-          $("#formz").on()
-          $( "#inputz" ).on()
           $( "#formz" ).attr("action","/test_route")
           $( "#formz" ).attr("method","post")
-          $( "#formz" ).submit(function( event ) {
-            console.log("wtf")
-          })
+          $( "#formz" ).append("<input style='display:none' value="+Global.finalTime+" name='score'>")
+          $( "#formz" ).append("<input type='submit' style='position: absolute; left: -9999px'>")
+          $( "#inputz" ).attr("name","username")
 
         })
       })

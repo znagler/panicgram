@@ -9,14 +9,10 @@ get '/play/:time' do
 end
 
 
-post '/win' do
-  Score.create(score: 10, username: params[:username])
-end
-
 post '/test_route' do
 	p "~"*100
-  # @highscores = Score.all
-  # erb :_win
+	Score.create(score:params[:score],username: params[:username])
+	redirect '/'
 end
 
 
