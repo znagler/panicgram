@@ -13,11 +13,17 @@ Global.startTime = new Date()
   event.preventDefault()
   playOn()
   regenerateSmallString()
-
   if (checkForWin()) winGame()
-    
-
   })
+
+
+  $( ".username" ).submit(function( event ) {
+  console.log("test")
+  })
+
+
+
+
 });
 
 
@@ -39,7 +45,16 @@ function winGame(){
         $(".wordstring").fadeIn( 2000, function() {
           $("#inputz").attr("placeholder", "Enter username")
           $("#inputz").css("color", "red")
+          $("#formz").addClass( "username" )
+          $("#formz").on()
+          $( "#inputz" ).on()
+          $( "#formz" ).attr("action","/test_route")
+          $( "#formz" ).attr("method","post")
+          $( "#formz" ).submit(function( event ) {
+            console.log("wtf")
           })
+
+        })
       })
   }, 500)
 }

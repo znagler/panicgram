@@ -18,8 +18,6 @@
 </center>
  <%= erb :_rules_modal %>
  <%= erb :_faq_modal %>
-<!-- Modal -->
-
-
-
+ <br>
+ <%= erb :_high_scores, :locals => { :high_score_array => calculate_high_scores(@scores) } %>
 </div>

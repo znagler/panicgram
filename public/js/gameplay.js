@@ -30,7 +30,7 @@ function playOn(callback){
 
 function checkForWin(){
   var score = parseInt($("#score").data("s"))
-  if (score >= 25) {
+  if (score >= 10) {
     return true
   }else {
     return false

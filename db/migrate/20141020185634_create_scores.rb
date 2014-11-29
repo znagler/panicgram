@@ -4,7 +4,6 @@ class CreateScores < ActiveRecord::Migration
       t.integer :score
       t.string :username
       t.timestamps
-
     end
 
   end

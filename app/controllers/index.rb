@@ -1,4 +1,5 @@
 get '/' do
+  @scores = Score.all
   erb :index
 end
 
@@ -12,7 +13,8 @@ post '/win' do
   Score.create(score: 10, username: params[:username])
 end
 
-get '/highscores' do
+post '/test_route' do
+	p "~"*100
   # @highscores = Score.all
   # erb :_win
 end
