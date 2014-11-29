@@ -11,9 +11,7 @@
   },
 
   shift: function(integer){
-      console.log("in shift")
       switch (integer){
-
       case 1:
        $('#first').css('background-color','white')
         $.when( $("#first").fadeOut("fast")).done(function() {
@@ -42,7 +40,6 @@
     },
 
   eat_letters: function(integer){
-    console.log("eat letters kicked off")
     prev = $("span").text()
     switch (integer){
       case 1:

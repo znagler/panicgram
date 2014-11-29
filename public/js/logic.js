@@ -1,22 +1,7 @@
 
-
-// var Logic = {
-//   analyze: function(entry,next_five){
-//     console.log("entry")
-//     console.log(entry)
-//     console.log("next")
-//     console.log(next_five)
-
-//     return 2
-//   }
-// }
-
-
 function logic(entry,nextFive) {
   this.nextFive = nextFive
   this.entry = entry
-  // this.entryArray = entry.split("");
-  // this.nextFiveArray = nextFive.split("");
   this.reqTwo = false
   this.reqThree = false
   this.reqFive = false
@@ -79,23 +64,5 @@ function logic(entry,nextFive) {
       if (counter === 5) this.reqFive = true
       }
   }
-
-
-
-
-
-
-    //   this.entryArray.indexOf(this.nextFiveArray[0])>-1 &&
-    //    this.entryArray.indexOf(this.nextFiveArray[1])>-1 &&
-    //    this.entryArray.indexOf(this.nextFiveArray[2])>-1 &&
-    //    this.entryArray.indexOf(this.nextFiveArray[3])>-1 &&
-    //    this.entryArray.indexOf(this.nextFiveArray[4])>-1){
-    //   console.log(this.entryArray)
-    //   console.log(this.nextFiveArray)
-    //   console.log("5!")
-    // this.reqTwo= true
-    //    }
-
-
 }
 
