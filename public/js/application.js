@@ -1,9 +1,9 @@
 
-
+var Global = {}
 $(document).ready(function() {
-console.log("in appp")
 initialSetup()
 setKeyEvents()
+Global.startTime = new Date()
 
   $( "#formz" ).submit(function( event ) {
   event.preventDefault()
@@ -20,6 +20,10 @@ setKeyEvents()
 
 
 function winGame(){
+
+    Global.endTime = new Date()
+    console.log((Global.endTime - Global.startTime) * (1/1000))
+    $('#statusz').text("Final Time: "+((Global.endTime - Global.startTime) * (1/1000))+" seconds")
     $( "#formz" ).off()
     $( "#formz" ).submit(function( event ) {
       event.preventDefault()
