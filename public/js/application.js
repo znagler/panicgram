@@ -37,6 +37,7 @@ function winGame(){
         $( "#inputz" ).off()
         $(".wordstring").hide()
         $(".wordstring").text("WIN")
+        $('.wordstring').append("<center><a href='http://panicgram.herokuapp.com/play/10'><h4>PLAY AGAIN</h4></a></center>")
         $(".wordstring").fadeIn( 2000, function() {
           $("#inputz").attr("placeholder", "Enter username")
           $("#inputz").css("color", "red")
