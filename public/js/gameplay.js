@@ -49,7 +49,6 @@ function addScore(integer){
     $('#score-container').append("<div class='score-points' style='color: rgba("+r+","+g+","+b+", 0.9)'>+"+integer+"</div>")
     new_score = $('#score').data("s") + integer
     $('#score').data("s",new_score)
-    console.log(integer)
     View.updateS()
 }
 
@@ -64,8 +63,6 @@ function animateNewJumps(integer){
 }
 
 function validWord(entry){
-    console.log("jumps")
-    console.log(Global.jumps)
     $('#statusz').text("Real word")
     var nextFive = $("#hidestring").data('hs').substring(0,5).toUpperCase()
     var currentLogic = new logic(entry,nextFive)
@@ -77,7 +74,6 @@ function validWord(entry){
     animateNewJumps(newJumps)
     }
     Global.jumps += newJumps
-    console.log(Global.jumps)
     $("#jumps").data("j",Global.jumps)
     View.updateJ()
     }

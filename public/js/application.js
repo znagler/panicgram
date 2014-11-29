@@ -1,5 +1,9 @@
 
-var Global = {}
+var Global = {
+  jumps: 0,
+  score: 0,
+  startTime: 0
+}
 $(document).ready(function() {
 initialSetup()
 setKeyEvents()
