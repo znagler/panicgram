@@ -17,7 +17,6 @@ function playOn(callback){
   if (dict[entry]){
     validWord(entry)
   }
-
   else if (entry.length <5) {
       $('#statusz').text("Too short")
     }

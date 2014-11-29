@@ -14,10 +14,8 @@ Global.startTime = new Date()
   playOn()
   regenerateSmallString()
 
-  if (checkForWin()){
-    winGame()
-
-  }
+  if (checkForWin()) winGame()
+    
 
   })
 });
