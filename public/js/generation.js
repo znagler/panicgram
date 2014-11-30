@@ -57,17 +57,13 @@ arr_z: [].concat(a,e,o),
 all: [].concat(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z)
 }
 
-// str = ($("#hidestring").text()).slice(-1)
 str = $("#hidestring").data("hs").slice(-1)
-// console.log(str)
 
 while (str.length <= stringLength){
   var last_letter = "arr_"+str.slice(-1)
 
   var random_arr = nextLetters[last_letter]
-  // str+= "a"
   str += random_arr[Math.floor(Math.random()*random_arr.length)]
-  // str+= r[last_letter][Math.floor(Math.random()*nextLetters[last_letter].length)]
 }
 return str.substring(1)
 
@@ -78,7 +74,6 @@ function initialSetup(){
   var randomLetter = weightedLetters[Math.floor(Math.random()*weightedLetters.length)]
   console.log(randomLetter)
   $("#hidestring").data("hs",randomLetter)
-  // $("#hidestring").text(weightedLetters[Math.floor(Math.random()*weightedLetters.length)])
   $("#hidestring").data("hs",randomLetter)
   $("#hidestring").data("hs",moreLetters(12))
   View.updateHs()
@@ -95,6 +90,8 @@ function regenerateSmallString(){
 
   }
 }
+
+//  Original method of string generation below: 
 
 // function generateString(stringLength){
 //   str = ""
