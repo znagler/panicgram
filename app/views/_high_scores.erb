@@ -1,5 +1,5 @@
 <center>
  	<%high_score_array.each do |score|%>
- 		<%= "#{score.username}: \n #{score.score}"%><br>
+ 		<%= "#{score.username}: \n #{score.score/10.0}"%><br>
  	<%end%>
 </center>

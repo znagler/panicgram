@@ -21,7 +21,7 @@ function logic(entry,nextFive) {
     if (this.reqFive) this.totalReqs++
     if (this.reqThree) this.totalReqs++
     if (this.reqTwo) this.totalReqs++
-    if (this.totalReqs === 2){return 1}
+    // if (this.totalReqs === 2){return 1}
     if (this.totalReqs === 3){return 1}
     return 0
   }
