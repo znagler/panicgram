@@ -4,7 +4,7 @@ get '/' do
 end
 
 get '/play/:time' do
-  redirect '/' if (params[:time]!="10" && params[:time]!="30")
+  redirect '/' if (params[:time]!="25" && params[:time]!="150")
   erb :play
 end
 

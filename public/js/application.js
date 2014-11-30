@@ -1,5 +1,5 @@
-
 var Global = {
+  goal: parseInt(document.URL.slice(-2)),
   jumps: 0,
   score: 0,
   startTime: 0
@@ -32,7 +32,7 @@ function winGame(){
     $.when($(".wordstring").fadeOut("slow")).done(function() {
       $(".wordstring").hide()
       $(".wordstring").text("WIN")
-      $('.wordstring').append("<center><a href='http://panicgram.herokuapp.com/play/10'><h4>PLAY AGAIN</h4></a></center>")
+      $('.wordstring').append("<center><a href='http://panicgram.herokuapp.com/play/25'><h4>PLAY AGAIN</h4></a></center>")
       $(".wordstring").fadeIn( 2000, function() {
         $( "#inputz" ).prop( "disabled", false )
         $( "#inputz" ).focus()
