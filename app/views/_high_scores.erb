@@ -1,122 +1,61 @@
+ <% high_scores = calculate_high_scores(all_scores,goal) %>
  <div class="col-md-6">
     <table class="table">
         <thead>
             <tr >
-                <th align="center" valign="middle" colspan="3"> 25 seconds</th>
+                <th align="center" valign="middle" colspan="3"> <%=goal%> seconds</th>
             </tr>
         </thead>
         <tbody>
         	<tr class="active">
                 <td>1</td>
-                <td><%=short_scores[0][0]%></td>
-                <td><%=short_scores[0][1]%></td>
+                <td><%=high_scores[0][0]%></td>
+                <td><%=high_scores[0][1]%></td>
             </tr>
             <tr class="info">
                 <td>2</td>
-                <td><%=short_scores[1][0]%></td>
-                <td><%=short_scores[1][1]%></td>
+                <td><%=high_scores[1][0]%></td>
+                <td><%=high_scores[1][1]%></td>
             </tr>
             <tr class="active">
                 <td>3</td>
-                <td><%=short_scores[2][0]%></td>
-                <td><%=short_scores[2][1]%></td>
+                <td><%=high_scores[2][0]%></td>
+                <td><%=high_scores[2][1]%></td>
             </tr>
             <tr class="info">
                 <td>4</td>
-                <td><%=short_scores[3][0]%></td>
-                <td><%=short_scores[3][1]%></td>
+                <td><%=high_scores[3][0]%></td>
+                <td><%=high_scores[3][1]%></td>
             </tr>
             <tr class="active">
                 <td>5</td>
-                <td><%=short_scores[4][0]%></td>
-                <td><%=short_scores[4][1]%></td>
+                <td><%=high_scores[4][0]%></td>
+                <td><%=high_scores[4][1]%></td>
             </tr>
         	<tr class="info">
                 <td>6</td>
-                <td><%=short_scores[5][0]%></td>
-                <td><%=short_scores[5][1]%></td>
+                <td><%=high_scores[5][0]%></td>
+                <td><%=high_scores[5][1]%></td>
             </tr>
             <tr class="active">
                 <td>7</td>
-                <td><%=short_scores[6][0]%></td>
-                <td><%=short_scores[6][1]%></td>
+                <td><%=high_scores[6][0]%></td>
+                <td><%=high_scores[6][1]%></td>
             </tr>
             <tr class="info">
                 <td>8</td>
-                <td><%=short_scores[7][0]%></td>
-                <td><%=short_scores[7][1]%></td>
+                <td><%=high_scores[7][0]%></td>
+                <td><%=high_scores[7][1]%></td>
             </tr>
             <tr class="active">
                 <td>9</td>
-                <td><%=short_scores[8][0]%></td>
-                <td><%=short_scores[8][1]%></td>
+                <td><%=high_scores[8][0]%></td>
+                <td><%=high_scores[8][1]%></td>
             </tr>
             <tr class="info">
                 <td>10</td>
-                <td><%=short_scores[9][0]%></td>
-                <td><%=short_scores[9][1]%></td>
-            </tr>
-        </tbody>
-    </table>
-  </div>
-
- <div class="col-md-6">
-    <table class="table">
-        <thead>
-            <tr >
-                <th align="center" valign="middle" colspan="3"> 100 seconds</th>
-            </tr>
-        </thead>
-        <tbody>
-        	<tr class="active">
-                <td>1</td>
-                <td><%=long_scores[0][0]%></td>
-                <td><%=long_scores[0][1]%></td>
-            </tr>
-            <tr class="info">
-                <td>2</td>
-                <td><%=long_scores[1][0]%></td>
-                <td><%=long_scores[1][1]%></td>
-            </tr>
-            <tr class="active">
-                <td>3</td>
-                <td><%=long_scores[2][0]%></td>
-                <td><%=long_scores[2][1]%></td>
-            </tr>
-            <tr class="info">
-                <td>4</td>
-                <td><%=long_scores[3][0]%></td>
-                <td><%=long_scores[3][1]%></td>
-            </tr>
-            <tr class="active">
-                <td>5</td>
-                <td><%=long_scores[4][0]%></td>
-                <td><%=long_scores[4][1]%></td>
-            </tr>
-        	<tr class="info">
-                <td>6</td>
-                <td><%=long_scores[5][0]%></td>
-                <td><%=long_scores[5][1]%></td>
-            </tr>
-            <tr class="active">
-                <td>7</td>
-                <td><%=long_scores[6][0]%></td>
-                <td><%=long_scores[6][1]%></td>
-            </tr>
-            <tr class="info">
-                <td>8</td>
-                <td><%=long_scores[7][0]%></td>
-                <td><%=long_scores[7][1]%></td>
-            </tr>
-            <tr class="active">
-                <td>9</td>
-                <td><%=long_scores[8][0]%></td>
-                <td><%=long_scores[8][1]%></td>
-            </tr>
-            <tr class="info">
-                <td>10</td>
-                <td><%=long_scores[9][0]%></td>
-                <td><%=long_scores[9][1]%></td>
+                <td><%=high_scores[9][0]%></td>
+                <td><%=high_scores[9][1]%></td>
             </tr>
         </tbody>
     </table>
