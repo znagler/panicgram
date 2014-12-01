@@ -18,10 +18,10 @@ function playOn(callback){
     validWord(entry)
   }
   else if (entry.length <5) {
-    $('#statusz').text("Too short")
+    $('#statusz').text("too short")
   }
   else {
-    $('#statusz').text("Fake word")
+    $('#statusz').text("fake word")
   }
 }
 
@@ -62,7 +62,7 @@ function animateNewJumps(integer){
 }
 
 function validWord(entry){
-  $('#statusz').text("Real word")
+  $('#statusz').text("nice one")
   var nextFive = $("#hidestring").data('hs').substring(0,5).toUpperCase()
   var currentLogic = new logic(entry,nextFive)
   if (currentLogic.shiftLength() >= 1){
@@ -75,6 +75,8 @@ function validWord(entry){
     Global.jumps += newJumps
     $("#jumps").data("j",Global.jumps)
     View.updateJ()
+    return
   }
+  $('#statusz').text("no letters earned")
 }
 
