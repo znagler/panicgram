@@ -10,7 +10,6 @@ end
 
 
 post '/score' do
-	p "~"*100
 	Score.create(score:params[:score],username: params[:username],goal: params[:goal])
 	redirect '/'
 end

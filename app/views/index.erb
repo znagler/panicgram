@@ -16,6 +16,9 @@
  <%= erb :_rules_modal %>
  <%= erb :_faq_modal %>
  <br>
-<%= erb :_high_scores, :locals => { :high_score_array => calculate_high_scores(@scores) } %>
+<%= erb :_high_scores, 
+    :locals => {short_scores: calculate_high_scores(@scores,25),
+                long_scores: calculate_high_scores(@scores,100)}
+%>
 
 </div>
