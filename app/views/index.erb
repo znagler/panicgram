@@ -1,15 +1,11 @@
-<div>
+<div class="container">
   <script src="/js/load_words.js"></script>
 <center>
   <p class="welcomestring">PANICGRAM</p>
 </center>
 <center>
-  <a href="/play/25" class="btn btn-primary btn-lg">Play</a>
-</center>
-<br>
-
-<!-- Modal -->
-<center>
+  <a href="/play/25" class="btn btn-primary btn-lg">Play to 25</a>
+  <a href="/play/100" class="btn btn-primary btn-lg">Play to 100</a>
 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
   Rules
 </button>
@@ -20,5 +16,128 @@
  <%= erb :_rules_modal %>
  <%= erb :_faq_modal %>
  <br>
- <%= erb :_high_scores, :locals => { :high_score_array => calculate_high_scores(@scores) } %>
+
+ <div class="col-md-6">
+    <table class="table">
+        <thead>
+            <tr >
+                <th align="center" valign="middle" colspan="3"> 25 seconds</th>
+            </tr>
+        </thead>
+        <tbody>
+        	<tr class="active">
+                <td>1</td>
+                <td>Credit Card</td>
+                <td>Call in to confirm</td>
+            </tr>
+            <tr class="info">
+                <td>2</td>
+                <td>Water</td>
+                <td>Paid</td>
+            </tr>
+            <tr class="active">
+                <td>3</td>
+                <td>Internet</td>
+                <td>Change plan</td>
+            </tr>
+            <tr class="info">
+                <td>4</td>
+                <td>Electricity</td>
+                <td>Pending</td>
+            </tr>
+            <tr class="active">
+                <td>5</td>
+                <td>Telephone</td>
+                <td>Due</td>
+            </tr>
+        	<tr class="info">
+                <td>1</td>
+                <td>Credit Card</td>
+                <td>Call in to confirm</td>
+            </tr>
+            <tr class="active">
+                <td>2</td>
+                <td>Water</td>
+                <td>Paid</td>
+            </tr>
+            <tr class="info">
+                <td>3</td>
+                <td>Internet</td>
+                <td>Change plan</td>
+            </tr>
+            <tr class="active">
+                <td>4</td>
+                <td>Electricity</td>
+                <td>Pending</td>
+            </tr>
+            <tr class="info">
+                <td>5</td>
+                <td>Telephone</td>
+                <td>Due</td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+
+ <div class="col-md-6">
+    <table class="table">
+        <thead>
+            <tr >
+                <th align="center" valign="middle" colspan="3"> 100 seconds</th>
+            </tr>
+        </thead>
+        <tbody>
+        	<tr class="active">
+                <td>1</td>
+                <td>Credit Card</td>
+                <td>Call in to confirm</td>
+            </tr>
+            <tr class="info">
+                <td>2</td>
+                <td>Water</td>
+                <td>Paid</td>
+            </tr>
+            <tr class="active">
+                <td>3</td>
+                <td>Internet</td>
+                <td>Change plan</td>
+            </tr>
+            <tr class="info">
+                <td>4</td>
+                <td>Electricity</td>
+                <td>Pending</td>
+            </tr>
+            <tr class="active">
+                <td>5</td>
+                <td>Telephone</td>
+                <td>Due</td>
+            </tr>
+        	<tr class="info">
+                <td>1</td>
+                <td>Credit Card</td>
+                <td>Call in to confirm</td>
+            </tr>
+            <tr class="active">
+                <td>2</td>
+                <td>Water</td>
+                <td>Paid</td>
+            </tr>
+            <tr class="info">
+                <td>3</td>
+                <td>Internet</td>
+                <td>Change plan</td>
+            </tr>
+            <tr class="active">
+                <td>4</td>
+                <td>Electricity</td>
+                <td>Pending</td>
+            </tr>
+            <tr class="info">
+                <td>5</td>
+                <td>Telephone</td>
+                <td>Due</td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
 </div>

@@ -3,6 +3,7 @@ class CreateScores < ActiveRecord::Migration
     create_table :scores do |t|
       t.integer :score
       t.string :username
+      t.integer :goal
       t.timestamps
     end
 

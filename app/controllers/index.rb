@@ -4,14 +4,14 @@ get '/' do
 end
 
 get '/play/:time' do
-  redirect '/' if (params[:time]!="25" && params[:time]!="150")
+  redirect '/' if (params[:time]!="25" && params[:time]!="100")
   erb :play
 end
 
 
-post '/test_route' do
+post '/score' do
 	p "~"*100
-	Score.create(score:params[:score],username: params[:username])
+	Score.create(score:params[:score],username: params[:username],goal: params[:goal])
 	redirect '/'
 end
 

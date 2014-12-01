@@ -1,5 +1,5 @@
 var Global = {
-  goal: parseInt(document.URL.slice(-2)),
+  goal: getGoal(),
   jumps: 0,
   score: 0,
   startTime: 0
@@ -41,9 +41,10 @@ function winGame(){
         $("#formz").addClass( "username" )
 
           // change form to submit form
-          $( "#formz" ).prop("action","/test_route")
+          $( "#formz" ).prop("action","/score")
           $( "#formz" ).prop("method","post")
           $( "#formz" ).append("<input style='display:none' value="+Global.rawTime+" name='score'>")
+          $( "#formz" ).append("<input style='display:none' value="+Global.goal+" name='goal'>")
           $( "#formz" ).append("<input id='temp-submit' type='submit' style='position: absolute; left: -9999px'>")
           $( "#inputz" ).prop("name","username")
 
@@ -52,6 +53,12 @@ function winGame(){
         })
     })
 }, 500)
+}
+
+function getGoal(){
+  if (parseInt(document.URL.slice(-2))===25) return 25
+  return 100
+
 }
 
 
