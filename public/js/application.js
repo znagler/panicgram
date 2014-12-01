@@ -54,7 +54,7 @@ function winGame(){
         // Style final page depending on whether high score
         if (Global.highScore){
           $("#inputz").prop("placeholder", "HIGH SCORE! Enter name")
-          $("#inputz").css("color", "red")
+          $("#inputz").css("color", "#9B6785")
         } else {
           $("#inputz").prop("placeholder","Enter name")
           $("#inputz").css("color", "black")

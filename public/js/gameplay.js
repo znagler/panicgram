@@ -30,7 +30,7 @@ function playOn(callback){
 
 function checkForWin(){
   var score = parseInt($("#score").data("s"))
-  if (score >= 6) {
+  if (score >= Global.goal) {
     return true
   } else {
     return false
