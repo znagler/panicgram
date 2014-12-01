@@ -1,4 +1,3 @@
-require 'pry'
 def calculate_high_scores(all_scores,goal)
 	scores_for_view = []
 	all_scores.where(goal: goal).order(score: :asc).limit(10).each do |score|
