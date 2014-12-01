@@ -13,9 +13,13 @@
   FAQ
 </button>
 </center>
+<br>
  <%= erb :_rules_modal %>
  <%= erb :_faq_modal %>
  <br>
+<center>
+    <h4>Best Times</h4>
+</center>
 <%= erb :_high_scores, :locals => {all_scores: @scores, goal: 25}%>
 <%= erb :_high_scores, :locals => {all_scores: @scores, goal: 100}%>
 

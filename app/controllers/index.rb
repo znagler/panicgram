@@ -15,3 +15,9 @@ post '/score' do
 end
 
 
+get '/hs_check' do
+	# binding.pry
+	return "true" if Score.where(goal: params["goal"]).length < 10 
+	return "true" if params["time"].to_i < Score.where(goal: params["goal"]).order(score: :asc)[9].score
+	"false"
+end
