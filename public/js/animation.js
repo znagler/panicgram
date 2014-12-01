@@ -13,7 +13,7 @@
   shift: function(integer){
       switch (integer){
       case 1:
-       $('#first').css('background-color','white')
+       $('#first').css('background-color','gray')
         $.when( $("#first").fadeOut("fast")).done(function() {
         Animate.eat_letters(integer)
         });
