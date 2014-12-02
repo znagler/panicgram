@@ -1,3 +1,5 @@
+$('body').append("<center id='load'><br><br><br><br><br><br><br><br><br><br><br><br><br><br><h1>loading...</h1></center>")
+
 var Global = {
   goal: getGoal(),
   jumps: 0,
@@ -16,7 +18,9 @@ $.get( "/dictionary5.txt", function( txt ) {
 
 
 
+
 $(document).ready(function() {
+  $('#load').remove()
   initialSetup()
   setKeyEvents()
   Global.startTime = new Date()
