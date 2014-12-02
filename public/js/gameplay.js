@@ -17,11 +17,14 @@ function playOn(callback){
   if (dict[entry]){
     validWord(entry)
   }
+  else if (entry === "J"  && Global.jumps === 0){
+    $('#statusz').text("no jumps")
+  }
   else if (entry.length <5) {
     $('#statusz').text("too short")
   }
   else {
-    $('#statusz').text("fake word")
+    $('#statusz').text("not a word")
   }
 }
 
