@@ -1,9 +1,11 @@
  <% high_scores = calculate_high_scores(all_scores,goal) %>
+ <% quick_or_long = "Quick" if goal==25 %>
+ <% quick_or_long = "Long" if goal==100 %>
  <div class="col-md-5 col-sm-5 col-xs-6">
     <table class="table">
         <thead>
             <tr >
-                <th align="center" valign="middle" colspan="3">Game to <%=goal%> </th>
+                <th align="center" valign="middle" colspan="3"> <%= quick_or_long%></th>
             </tr>
         </thead>
         <tbody>
