@@ -13,25 +13,25 @@
   shift: function(integer){
       switch (integer){
       case 1:
-       $('#first').css('background-color','gray')
+       $('#first').css('background-color','black')
         $.when( $("#first").fadeOut("fast")).done(function() {
         Animate.eat_letters(integer)
         });
         break;
       case 2:
-       $('#first,#second').css('background-color','blue')
+       $('#first,#second').css('background-color','#79C0EE')
         $.when( $("#first").fadeOut("fast"), $("#second").fadeOut("fast")).done(function() {
         Animate.eat_letters(integer)
         });
         break;
         case 3:
-        $('#first,#second,#third').css('background-color','red')
+        $('#first,#second,#third').css('background-color','#65FF00')
         $.when( $("#first").fadeOut("fast"), $("#second").fadeOut("fast"),$("#third").fadeOut("fast") ).done(function() {
         Animate.eat_letters(integer)
         });
         break;
         case 5:
-        $('#first,#second,#third,#last_2').css('background-color','yellow')
+        $('#first,#second,#third,#last_2').css('background-color','#FF1A75')
         $.when( $("#first").fadeOut("fast"),$("#second").fadeOut("fast"), $("#third").fadeOut("fast"),$("#last_2").fadeOut("fast")).done(function() {
         Animate.eat_letters(integer)
         });

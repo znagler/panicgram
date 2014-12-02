@@ -41,27 +41,20 @@ function checkForWin(){
 }
 
 function addScore(integer){
-  var r=0
-  var g=0
-  var b=0
-  if (integer === 2) b=255;
-  if (integer === 3) r=255;
-  if (integer === 5) g=r=255;
+  var color = ""
+  if (integer === 2) color = "#79C0EE"
+  if (integer === 3) color = "#65FF00"
+  if (integer === 5) color = "#FF1A75"
 
-  $('#score-container').append("<div class='score-points' style='color: rgba("+r+","+g+","+b+", 0.9)'>+"+integer+"</div>")
+  $('#score-container').append("<div class='score-points'>+"+integer+"</div>")
+  $('.score-points').css("color",color)
   new_score = $('#score').data("s") + integer
   $('#score').data("s",new_score)
   View.updateS()
 }
 
 function animateNewJumps(integer){
-  var r=0
-  var g=0
-  var b=0
-  if (integer === 1) b=255;
-  if (integer === 2) r=255;
-  $('#jump-container').append("<div class='score-jumps' style='color: rgba("+r+","+g+","+b+", 0.9)'>+"+integer+"</div>")
-
+  $('#jump-container').append("<div class='score-jumps' style='color: #FF1A75'>+"+integer+"</div>")
 }
 
 function validWord(entry){
