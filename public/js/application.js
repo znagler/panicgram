@@ -4,7 +4,17 @@ var Global = {
   score: 0,
   startTime: 0,
   highScore: false,
+  dict: {}
 }
+
+$.get( "/dictionary5.txt", function( txt ) {
+    var words = txt.split( "\n" )
+    for ( var i = 0; i < words.length; i++ ) {
+        Global.dict[words[i].trim()] = true
+    }
+  })
+
+
 
 $(document).ready(function() {
   initialSetup()
@@ -34,9 +44,6 @@ function winGame(){
     if (response === "true") Global.highScore = true
   })
 
-
-
-
   $('#statusz').text("Final Time: "+finalTime+" seconds")
   $( "#formz" ).off()
   $( "#inputz" ).off()
@@ -51,7 +58,7 @@ function winGame(){
         $( "#inputz" ).prop( "disabled", false )
         $( "#inputz" ).focus()
 
-        // Style final page depending on whether high score
+        // style final page depending on whether high score
         if (Global.highScore){
           $("#inputz").prop("placeholder", "HIGH SCORE! Enter name")
           $("#inputz").css("color", "#9B6785")

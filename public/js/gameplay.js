@@ -1,7 +1,7 @@
 function playOn(callback){
   var entry = $('#inputz').val().toUpperCase()
-  var store_dict = localStorage.getItem('dict')
-  var dict = JSON.parse(store_dict)
+  // var store_dict = localStorage.getItem('dict')
+  // var dict = JSON.parse(store_dict)
   $("#inputz").val("")
   Global.jumps = parseInt($("#jumps").data("j"))
   var score = parseInt($("#score").data("s"))
@@ -14,7 +14,7 @@ function playOn(callback){
     View.updateJ()
     return
   }
-  if (dict[entry]){
+  if (Global.dict[entry]){
     validWord(entry)
   }
   else if (entry === "J"  && Global.jumps === 0){
