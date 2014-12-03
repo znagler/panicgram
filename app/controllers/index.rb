@@ -5,6 +5,7 @@ end
 
 get '/play/:time' do
   redirect '/' if (params[:time]!="25" && params[:time]!="100")
+  @goal = params[:time]
   erb :play
 end
 
