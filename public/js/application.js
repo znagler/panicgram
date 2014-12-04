@@ -56,7 +56,8 @@ function winGame(){
   setTimeout(function(){
     $.when($(".wordstring").fadeOut("slow")).done(function() {
       $(".wordstring").hide()
-      $(".wordstring").text("WIN")
+      $(".wordstring").css("color","#620037")
+      $(".wordstring").html("goal<i class='fa fa-flag-checkered'></i>")
       // $('.wordstring').append("<center><a href='http://panicgram.herokuapp.com/play/25'><h4>PLAY AGAIN</h4></a></center>")
       $(".wordstring").fadeIn( 2000, function() {
         $( "#inputz" ).prop( "disabled", false )
