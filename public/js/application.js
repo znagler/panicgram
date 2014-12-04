@@ -48,7 +48,7 @@ function winGame(){
     if (response === "true") Global.highScore = true
   })
 
-  $('#statusz').text("final time: "+finalTime+" seconds")
+  $('#statusz').text("time: "+finalTime+" seconds")
   $( "#formz" ).off()
   $( "#inputz" ).off()
   $( "#inputz" ).prop( "disabled", true )
