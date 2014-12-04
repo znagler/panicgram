@@ -8,6 +8,4 @@ var View = {
   updateS: function(){
     $("#score").text($("#score").data("s"))
   }
-
-
 }
