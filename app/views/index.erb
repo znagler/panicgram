@@ -3,6 +3,7 @@
 <center>
   <p class="welcomestring">panicgram</p>
 </center>
+
 <center>
   <a href="/play/25" class="btn btn-default btn-lg">Play Quick</a>
   <a href="/play/100" class="btn btn-default btn-lg">Play Long</a>
@@ -24,5 +25,8 @@
  </div>
 <%= erb :_high_scores, :locals => {all_scores: @scores, goal: 100}%>
 
-
+<center>
+  <a href="https://twitter.com/panicgram" class="twitter-follow-button" data-show-count="false">Follow @panicgram</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</center>
 </div>
