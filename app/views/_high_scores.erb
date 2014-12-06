@@ -1,7 +1,7 @@
  <% high_scores = calculate_high_scores(all_scores,goal) %>
- <% quick_or_long = "Quick" if goal==25 %>
- <% quick_or_long = "Long" if goal==100 %>
- <div class="col-md-5 col-sm-5 col-xs-6">
+ <% quick_or_long = "quick" if goal==25 %>
+ <% quick_or_long = "long" if goal==100 %>
+
     <table class="table">
         <thead>
             <tr >
@@ -10,55 +10,45 @@
         </thead>
         <tbody>
         	<tr class="active">
-                <td>1</td>
                 <td><%=high_scores[0][0]%></td>
                 <td><%=high_scores[0][1]%></td>
             </tr>
             <tr>
-                <td>2</td>
                 <td><%=high_scores[1][0]%></td>
                 <td><%=high_scores[1][1]%></td>
             </tr>
             <tr class="active">
-                <td>3</td>
                 <td><%=high_scores[2][0]%></td>
                 <td><%=high_scores[2][1]%></td>
             </tr>
             <tr>
-                <td>4</td>
                 <td><%=high_scores[3][0]%></td>
                 <td><%=high_scores[3][1]%></td>
             </tr>
             <tr class="active">
-                <td>5</td>
                 <td><%=high_scores[4][0]%></td>
                 <td><%=high_scores[4][1]%></td>
             </tr>
         	<tr>
-                <td>6</td>
                 <td><%=high_scores[5][0]%></td>
                 <td><%=high_scores[5][1]%></td>
             </tr>
             <tr class="active">
-                <td>7</td>
                 <td><%=high_scores[6][0]%></td>
                 <td><%=high_scores[6][1]%></td>
             </tr>
             <tr>
-                <td>8</td>
                 <td><%=high_scores[7][0]%></td>
                 <td><%=high_scores[7][1]%></td>
             </tr>
             <tr class="active">
-                <td>9</td>
                 <td><%=high_scores[8][0]%></td>
                 <td><%=high_scores[8][1]%></td>
             </tr>
             <tr>
-                <td>10</td>
                 <td><%=high_scores[9][0]%></td>
                 <td><%=high_scores[9][1]%></td>
             </tr>
         </tbody>
     </table>
-  </div>
+

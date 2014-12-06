@@ -27,14 +27,28 @@
 </center>
  <%= erb :_rules_modal %>
  <%= erb :_faq_modal %>
- <br>
+ <hr>
 <center>
-    <h4>Best Times</h4>
+    <h5>Fastest Times</h5>
 </center>
+<div class="col-md-6 col-sm-6 col-xs-6">
+	<center><h6>All-time</h6></center>
+</div>
+<div class="col-md-6 col-sm-6 col-xs-6">
+	<center><h6>Last 24 Hours</h6></center>
+</div>
+ <div class="col-md-3 col-sm-3 col-xs-3">
 <%= erb :_high_scores, :locals => {all_scores: @scores, goal: 25}%>
- <div class="col-md-2 col-sm-2 col-xs-0">
  </div>
+ <div class="col-md-3 col-sm-3 col-xs-3 scoreboard">
 <%= erb :_high_scores, :locals => {all_scores: @scores, goal: 100}%>
+ </div>
+ <div class="col-md-3 col-sm-3 col-xs-3">
+<%= erb :_high_scores, :locals => {all_scores: @scores, goal: 25}%>
+ </div>
+ <div class="col-md-3 col-sm-3 col-xs-3">
+<%= erb :_high_scores, :locals => {all_scores: @scores, goal: 100}%>
+ </div>
 
 <center>
   <a href="https://twitter.com/panicgram" class="twitter-follow-button" data-show-count="false">Follow @panicgram</a>

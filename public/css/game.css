@@ -6,6 +6,10 @@ body {
   background-color: #FAF8EF;
 }
 
+.scoreboard{
+  border-right: 1px solid #ccc;
+}
+
 .modal-body{
   background-color: white;
 }
