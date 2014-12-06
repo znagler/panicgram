@@ -74,7 +74,7 @@ function initialSetup(){
   var randomLetter = weightedLetters[Math.floor(Math.random()*weightedLetters.length)]
   $("#hidestring").data("hs",randomLetter)
   $("#hidestring").data("hs",randomLetter)
-  $("#hidestring").data("hs",moreLetters(12))
+  $("#hidestring").data("hs",moreLetters(15))
   View.updateHs()
   Animate.reset()
 }
@@ -82,7 +82,7 @@ function initialSetup(){
 function regenerateSmallString(){
   if (($("#hidestring").data("hs")).length < 10){
   var oldLetters = $("#hidestring").data("hs")
-  var newLetters = moreLetters(12)
+  var newLetters = moreLetters(15)
 
   $("#hidestring").data("hs",oldLetters+newLetters)
   View.updateHs

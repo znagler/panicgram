@@ -18,11 +18,11 @@ function logic(entry,nextFive) {
 
   }
   this.addedJumps = function() {
-    if (this.reqFive) this.totalReqs++
-    if (this.reqThree) this.totalReqs++
-    if (this.reqTwo) this.totalReqs++
-    // if (this.totalReqs === 2){return 1}
+    if (this.reqFive) this.totalReqs+=2
+    if (this.reqThree) this.totalReqs+=1
+    if (this.reqTwo) this.totalReqs+=1
     if (this.totalReqs === 3){return 1}
+    if (this.totalReqs === 4){return 2}
     return 0
   }
 

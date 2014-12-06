@@ -9,10 +9,11 @@ function playOn(callback){
     jump()
     jumpInterval = setInterval(function(){ 
     jump() 
+    regenerateSmallString()
     if (Global.jumps === 0) {
       clearInterval(jumpInterval)
       Global.currentlyUsingAllJumps = false
-      checkForWin()
+      if (checkForWin()) winGame()
     }
     }, 150)
     return
@@ -28,7 +29,6 @@ function playOn(callback){
     return
   }
   if (Global.dict[entry]){
-    Global.currentlyShifting = true
     validWord(entry)
   }
   else if ((entry === "J"  || entry ==="JJ") && Global.jumps === 0){
@@ -46,7 +46,6 @@ function playOn(callback){
 
 
 function checkForWin(){
-  console.log("checkForWin")
   var score = parseInt($("#score").data("s"))
   if (score >= Global.goal) {
     return true
@@ -77,6 +76,7 @@ function validWord(entry){
   var nextFive = $("#hidestring").data('hs').substring(0,5).toUpperCase()
   var currentLogic = new logic(entry,nextFive)
   if (currentLogic.shiftLength() >= 1){
+    Global.currentlyShifting = true
     addScore(currentLogic.shiftLength())
     Animate.shift(currentLogic.shiftLength())
     var newJumps = currentLogic.addedJumps()
