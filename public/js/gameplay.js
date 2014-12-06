@@ -12,7 +12,6 @@ function playOn(callback){
     if (Global.jumps === 0) {
       clearInterval(jumpInterval)
       Global.currentlyUsingAllJumps = false
-      console.log("test")
       checkForWin()
     }
     }, 150)
