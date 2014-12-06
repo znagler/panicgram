@@ -46,6 +46,7 @@ function playOn(callback){
 
 
 function checkForWin(){
+  console.log("checkForWin")
   var score = parseInt($("#score").data("s"))
   if (score >= Global.goal) {
     return true

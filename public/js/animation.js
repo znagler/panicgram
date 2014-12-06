@@ -51,6 +51,7 @@
     Animate.set_hidestring_and_extras(1)
     $(".wordstring").animate(
       {'marginLeft':"270px"},70,null,function() {
+        Global.currentlyShifting = false
         Animate.reset()})
       break
       case 2:
@@ -62,6 +63,7 @@
     Animate.set_hidestring_and_extras(2)
     $(".wordstring").animate(
       {'marginLeft':"180px"},"fast",null,function() {
+        Global.currentlyShifting = false
         Animate.reset()})
       break
     case 3:
@@ -75,6 +77,7 @@
         Animate.set_hidestring_and_extras(3)
         $(".wordstring").animate(
         {'marginLeft':"90px"},"fast",null,function() {
+          Global.currentlyShifting = false
           Animate.reset()})
       break
     case 5:
@@ -86,6 +89,7 @@
         Animate.set_hidestring_and_extras(5)
         $(".wordstring").animate(
         {'marginLeft':"-90px"},"fast",null,function() {
+          Global.currentlyShifting = false
           Animate.reset()})
       break
     }
