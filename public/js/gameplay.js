@@ -1,23 +1,38 @@
 function playOn(callback){
   var entry = $('#inputz').val().toUpperCase()
-  // var store_dict = localStorage.getItem('dict')
-  // var dict = JSON.parse(store_dict)
   $("#inputz").val("")
   Global.jumps = parseInt($("#jumps").data("j"))
   var score = parseInt($("#score").data("s"))
+
+  if (entry === "JJ"  && Global.jumps>1){
+    Global.currentlyUsingAllJumps = true
+    jump()
+    jumpInterval = setInterval(function(){ 
+    jump() 
+    if (Global.jumps === 0) {
+      clearInterval(jumpInterval)
+      Global.currentlyUsingAllJumps = false
+      console.log("test")
+      checkForWin()
+    }
+    }, 150)
+    return
+  }
+
+
+  if (entry === "JJ"  && Global.jumps===1){
+    entry="J"
+  }
+
   if (entry === "J"  && Global.jumps>0){
-    Animate.shift(1)
-    addScore(1)
-    Global.jumps--
-    score++
-    $("#jumps").data("j",Global.jumps)
-    View.updateJ()
+    jump()
     return
   }
   if (Global.dict[entry]){
+    Global.currentlyShifting = true
     validWord(entry)
   }
-  else if (entry === "J"  && Global.jumps === 0){
+  else if ((entry === "J"  || entry ==="JJ") && Global.jumps === 0){
     $('#statusz').text("no jumps")
   }
   else if (entry.length <5) {
@@ -74,5 +89,14 @@ function validWord(entry){
     return
   }
   $('#statusz').text("no letters earned")
+}
+
+function jump(){
+    Global.currentlyShifting = true
+    Animate.shift(1)
+    addScore(1)
+    Global.jumps--
+    $("#jumps").data("j",Global.jumps)
+    View.updateJ()
 }
 

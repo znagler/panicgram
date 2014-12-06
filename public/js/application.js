@@ -6,7 +6,9 @@ var Global = {
   score: 0,
   startTime: 0,
   highScore: false,
-  dict: {}
+  dict: {},
+  currentlyShifting: false,
+  currentlyUsingAllJumps: false
 }
 
 $.get( "/dictionary5.txt", function( txt ) {
@@ -27,9 +29,12 @@ $(document).ready(function() {
 
   $( "#formz" ).submit(function( event ) {
     event.preventDefault()
-    playOn()
-    regenerateSmallString()
+    if (Global.currentlyShifting === false && Global.currentlyUsingAllJumps == false){
+      playOn()
+      regenerateSmallString()
+    }
     if (checkForWin()) winGame()
+
   })
 })
 
@@ -58,7 +63,6 @@ function winGame(){
       $(".wordstring").hide()
       $(".wordstring").css("color","#620037")
       $(".wordstring").html("goal<i class='fa fa-flag-checkered'></i>")
-      // $('.wordstring').append("<center><a href='http://panicgram.herokuapp.com/play/25'><h4>PLAY AGAIN</h4></a></center>")
       $(".wordstring").fadeIn( 2000, function() {
         $( "#inputz" ).prop( "disabled", false )
         $( "#inputz" ).focus()
