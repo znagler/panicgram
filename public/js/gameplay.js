@@ -19,7 +19,6 @@ function playOn(callback){
     return
   }
 
-
   if (entry === "JJ"  && Global.jumps===1){
     entry="J"
   }

@@ -1,10 +1,8 @@
  var Animate = {
 
   set_hidestring_and_extras: function(integer){
-    // hidestring=$("#hidestring").text()
     hidestring=$("#hidestring").data('hs')
     extras = hidestring.substring(5,5+integer)
-    // $("#hidestring").text(hidestring.substring(integer))
     $("#hidestring").data('hs',hidestring.substring(integer))
     View.updateHs()
     $("#extras").text(extras)
@@ -51,7 +49,6 @@
     Animate.set_hidestring_and_extras(1)
     $(".wordstring").animate(
       {'marginLeft':"270px"},70,null,function() {
-        Global.currentlyShifting = false
         Animate.reset()})
       break
       case 2:
@@ -63,7 +60,6 @@
     Animate.set_hidestring_and_extras(2)
     $(".wordstring").animate(
       {'marginLeft':"180px"},"fast",null,function() {
-        Global.currentlyShifting = false
         Animate.reset()})
       break
     case 3:
@@ -77,7 +73,6 @@
         Animate.set_hidestring_and_extras(3)
         $(".wordstring").animate(
         {'marginLeft':"90px"},"fast",null,function() {
-          Global.currentlyShifting = false
           Animate.reset()})
       break
     case 5:
@@ -89,7 +84,6 @@
         Animate.set_hidestring_and_extras(5)
         $(".wordstring").animate(
         {'marginLeft':"-90px"},"fast",null,function() {
-          Global.currentlyShifting = false
           Animate.reset()})
       break
     }

@@ -73,7 +73,6 @@ function initialSetup(){
   weightedLetters = "aaaaaaaaabbccccccddddeeeeeeeeeeeeffffggghhiiiiiiiiijkllllmmnnnnnnooooooooppppqrrrrrrssssssttttttuuuuvvwwxyz"
   var randomLetter = weightedLetters[Math.floor(Math.random()*weightedLetters.length)]
   $("#hidestring").data("hs",randomLetter)
-  $("#hidestring").data("hs",randomLetter)
   $("#hidestring").data("hs",moreLetters(15))
   View.updateHs()
   Animate.reset()
