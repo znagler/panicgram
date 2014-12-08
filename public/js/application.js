@@ -8,7 +8,8 @@ var Global = {
   highScore: false,
   dict: {},
   currentlyShifting: false,
-  currentlyUsingAllJumps: false
+  currentlyUsingAllJumps: false,
+  currentlyWinningGame: false
 }
 
 $.get( "/dictionary5.txt", function( txt ) {
@@ -29,16 +30,17 @@ $(document).ready(function() {
 
   $( "#formz" ).submit(function( event ) {
     event.preventDefault()
-    if (Global.currentlyShifting === false && Global.currentlyUsingAllJumps == false){
+    if (!Global.currentlyShifting && !Global.currentlyUsingAllJumps  && !Global.currentlyWinningGame){
       playOn()
       regenerateSmallString()
+      if (checkForWin()) winGame()
     }
-    if (checkForWin()) winGame()
 
   })
 })
 
 function winGame(){
+  Global.currentlyWinningGame = true
 
   var endTime = new Date()
   Global.rawTime = Math.round((endTime - Global.startTime)*(1/100))
@@ -57,6 +59,7 @@ function winGame(){
   $( "#formz" ).off()
   $( "#inputz" ).off()
   $( "#inputz" ).prop( "disabled", true )
+  
 
   setTimeout(function(){
     $.when($(".wordstring").fadeOut("slow")).done(function() {
@@ -64,8 +67,8 @@ function winGame(){
       $(".wordstring").css("color","#620037")
       $(".wordstring").html("goal<i class='fa fa-flag-checkered'></i>")
       $(".wordstring").fadeIn( 2000, function() {
-        $( "#inputz" ).prop( "disabled", false )
-        $( "#inputz" ).focus()
+      $( "#inputz" ).prop( "disabled", false )
+      $( "#inputz" ).focus()
 
         // style final page depending on whether high score
         if (Global.highScore){

@@ -2,6 +2,10 @@ body {
   background-color: #FAF8EF;
 }
 
+.blog-content{
+  font-size: 14px;
+  font-family: 'Open Sans'
+}
 .scoreboard{
   border-right: 1px solid #ccc;
 }

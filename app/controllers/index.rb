@@ -3,6 +3,11 @@ get '/' do
   erb :index
 end
 
+get '/blog' do
+  erb :blog
+end
+
+
 get '/play/:time' do
   redirect '/' if (params[:time]!="25" && params[:time]!="100")
   @goal = params[:time]
