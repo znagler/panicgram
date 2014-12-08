@@ -6,8 +6,19 @@ $(window).bind("pageshow", function(event) {
 })
 
 $(document).ready(function() {
+	makeUserNamesTwitterLinks()
+
 	$( "a.load-button" ).click(function() {
  		$(".index").empty()
  		$('body').append("<center id='load'><br><br><br><br><br><br><br><br><br><br><br><br><br><br><h1>loading...</h1></center>")
 	})
 })
+
+function makeUserNamesTwitterLinks(){
+	$( ".user-name" ).get().forEach(function(div){
+		if (div.innerHTML[0] === "@"){
+			twitter = 'http://twitter.com/' + (div.innerHTML.substring(1))
+			div.innerHTML="<a href="+twitter+">"+div.innerHTML+"</a>"
+		}
+	})
+}
