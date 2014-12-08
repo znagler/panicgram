@@ -22,7 +22,7 @@ end
 
 
 get '/hs_check' do
-	return "true" if Score.where(goal: params["goal"]).length < 10 
-	return "true" if params["time"].to_i < Score.where(goal: params["goal"]).order(score: :asc)[9].score
+	return "true" if Score.where(goal: params["goal"]).where(["created_at > ?", 1.days.ago]).length < 10 
+	return "true" if params["time"].to_i < Score.where(goal: params["goal"]).where(["created_at > ?", 1.days.ago]).order(score: :asc)[9].score
 	"false"
 end
