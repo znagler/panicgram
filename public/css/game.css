@@ -4,7 +4,7 @@ body {
 
 .blog-content{
   font-size: 14px;
-  font-family: 'Open Sans'
+  font-family: 'Open Sans', Helvetica
 }
 .scoreboard{
   border-right: 1px solid #ccc;
