@@ -71,13 +71,15 @@ function winGame(){
         Global.gameOverAnimationComplete = true
         $( "#inputz" ).prop( "disabled", false )
         $( "#inputz" ).focus()
+        $( "#inputz" ).css("text-transform","none")
 
         // style final page depending on whether high score
         if (Global.highScore){
-          $("#inputz").prop("placeholder", "HIGH SCORE! Enter name")
+          $("#inputz").prop("placeholder", "HIGH SCORE! enter name")
           $("#inputz").css("color", "#9B6785")
         } else {
-          $("#inputz").prop("placeholder","Enter name")
+          $("#inputz").prop("placeholder","enter name")
+          console.log('text t');
           $("#inputz").css("color", "black")
         }
         
