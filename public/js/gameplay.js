@@ -41,18 +41,6 @@ function playOn(callback){
   }
 }
 
-
-
-
-function checkForWin(){
-  var score = parseInt($("#score").data("s"))
-  if (score >= Global.goal) {
-    return true
-  } else {
-    return false
-  }
-}
-
 function addScore(integer){
   var color = ""
   if (integer === 2) color = "#79C0EE"
