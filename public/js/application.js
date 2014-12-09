@@ -9,7 +9,8 @@ var Global = {
   dict: {},
   currentlyShifting: false,
   currentlyUsingAllJumps: false,
-  currentlyWinningGame: false
+  gameOverAnimationStarted: false,
+  gameOverAnimationComplete: false
 }
 
 $.get( "/dictionary5.txt", function( txt ) {
@@ -29,18 +30,19 @@ $(document).ready(function() {
   Global.startTime = new Date()
 
   $( "#formz" ).submit(function( event ) {
-    event.preventDefault()
-    if (!Global.currentlyShifting && !Global.currentlyUsingAllJumps  && !Global.currentlyWinningGame){
+
+    if (!Global.gameOverAnimationComplete) (event.preventDefault())
+    if (!Global.currentlyShifting && !Global.currentlyUsingAllJumps  && !Global.gameOverAnimationStarted){
       playOn()
-      regenerateSmallString()
       if (checkForWin()) winGame()
+      regenerateSmallString()
     }
 
   })
 })
 
 function winGame(){
-  Global.currentlyWinningGame = true
+  Global.gameOverAnimationStarted = true
 
   var endTime = new Date()
   Global.rawTime = Math.round((endTime - Global.startTime)*(1/100))
@@ -56,10 +58,9 @@ function winGame(){
   })
 
   $('#statusz').text("time: "+finalTime+" seconds")
-  $( "#formz" ).off()
   $( "#inputz" ).off()
   $( "#inputz" ).prop( "disabled", true )
-  
+
 
   setTimeout(function(){
     $.when($(".wordstring").fadeOut("slow")).done(function() {
@@ -67,8 +68,9 @@ function winGame(){
       $(".wordstring").css("color","#620037")
       $(".wordstring").html("goal<i class='fa fa-flag-checkered'></i>")
       $(".wordstring").fadeIn( 2000, function() {
-      $( "#inputz" ).prop( "disabled", false )
-      $( "#inputz" ).focus()
+        Global.gameOverAnimationComplete = true
+        $( "#inputz" ).prop( "disabled", false )
+        $( "#inputz" ).focus()
 
         // style final page depending on whether high score
         if (Global.highScore){
@@ -84,7 +86,7 @@ function winGame(){
         $( "#formz" ).prop("method","post")
         $( "#formz" ).append("<input style='display:none' value="+Global.rawTime+" name='score'>")
         $( "#formz" ).append("<input style='display:none' value="+Global.goal+" name='goal'>")
-        $( "#formz" ).append("<input id='temp-submit' type='submit' style='position: absolute; left: -9999px'>")
+        $( "#formz" ).append("<input id='temp-submit' type='submit' style='position: absolute; left: -99px'>")
         $( "#inputz" ).prop("name","username")
 
         // Prevent double form submission
