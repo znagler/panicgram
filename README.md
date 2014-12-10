@@ -1,6 +1,6 @@
 Panicgram is a unique, fast-paced anagram-finding game.
 
-http://panicgram.herokuapp.com
+http://www.panicgr.am
 
 As a former obsessed Scrabble player, I understand the strange thrill that rearranging letters brings some people.  With Panicgram I wanted to offer a new outlet for those people with some particular components in mind.
 
