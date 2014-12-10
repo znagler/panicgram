@@ -1,3 +1,5 @@
+window.location="http://www.panicgr.am"
+
 // Forces refresh on back button (fixes issue with hitting back button on Safari)
 $(window).bind("pageshow", function(event) {
     if (event.originalEvent.persisted) {
