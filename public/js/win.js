@@ -1,6 +1,6 @@
 function checkForWin(){
   var score = parseInt($("#score").data("s"))
-  if (score >= Global.goal) {
+  if (score >= 2) {
     return true
   } else {
     return false
@@ -8,6 +8,7 @@ function checkForWin(){
 }
 
 function winGame(){
+
   Global.gameOverAnimationStarted = true
 
   var endTime = new Date()
@@ -34,7 +35,12 @@ function winGame(){
       $(".wordstring").css("color","#620037")
       $(".wordstring").html("goal<i class='fa fa-flag-checkered'></i>")
       $(".wordstring").fadeIn( 2000, function() {
+        runTwitterScript(Global.rawTime/10)
         Global.gameOverAnimationComplete = true
+
+
+
+
         $( "#inputz" ).prop( "disabled", false )
         $( "#inputz" ).focus()
         $( "#inputz" ).css("text-transform","none")
@@ -47,6 +53,14 @@ function winGame(){
         })
     })
   }, 500)
+}
+
+function runTwitterScript(time){
+  var winMessage = "I%20just%20beat%20http://www.panicgr.am%20in%20"+time+"%20seconds.%20I%20am%20a%20golden%20God!"
+  $('#jump-container').html("<a href='https://twitter.com/intent/tweet?button_hashtag=panicgram&text="+winMessage+"'' class='twitter-hashtag-button' data-size='large' data-related='panicgram'></a>")
+  $('#score-container').remove()
+
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
 }
 
 function stylePlaceholderDependingOnHighScore(highscore){
