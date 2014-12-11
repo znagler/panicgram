@@ -1,6 +1,6 @@
 function checkForWin(){
   var score = parseInt($("#score").data("s"))
-  if (score >= 2) {
+  if (score >= Global.goal) {
     return true
   } else {
     return false
