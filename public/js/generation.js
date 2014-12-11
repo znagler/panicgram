@@ -74,6 +74,10 @@ function initialSetup(){
   var randomLetter = weightedLetters[Math.floor(Math.random()*weightedLetters.length)]
   $("#hidestring").data("hs",randomLetter)
   $("#hidestring").data("hs",moreLetters(15))
+
+  // for testing:
+  // $("#hidestring").data("hs","appleappleappleappleapple")
+  
   View.updateHs()
   Animate.reset()
 }
