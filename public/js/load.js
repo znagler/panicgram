@@ -1,4 +1,7 @@
-// if (window.location.hostname != "localhost") window.location = "http://www.panicgr.am"
+if (window.location === "http://panicgram.herokuapp.com" || window.location === "http://panicgram.herokuapp.com/"){
+	window.location = "http://www.panicgr.am"
+}
+
 
 
 // Forces refresh on back button (fixes issue with hitting back button on Safari)
