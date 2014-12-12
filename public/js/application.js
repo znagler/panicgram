@@ -11,7 +11,7 @@ var Global = {
   currentlyUsingAllJumps: false,
   gameOverAnimationStarted: false,
   gameOverAnimationComplete: false,
-  lettersEntered: ""
+  words: 0
 }
 
 $.get( "/dictionary5.txt", function( txt ) {

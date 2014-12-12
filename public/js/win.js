@@ -80,6 +80,7 @@ function prepareFormForPost(){
   $( "#formz" ).prop("method","post")
   $( "#formz" ).append("<input style='display:none' value="+Global.rawTime+" name='score'>")
   $( "#formz" ).append("<input style='display:none' value="+Global.goal+" name='goal'>")
+  $( "#formz" ).append("<input style='display:none' value="+Global.words+" name='words'>")
   $( "#formz" ).append("<input id='temp-submit' type='submit' style='position: absolute; left: -99px'>")
   $( "#inputz" ).prop("name","username")
 }

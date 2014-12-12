@@ -16,7 +16,7 @@ end
 
 
 post '/score' do
-	Score.create(score: params[:score],username: params[:username],goal: params[:goal])
+	Score.create(score: params[:score],username: params[:username],goal: params[:goal],words: params[:words])
 	redirect '/'
 end
 

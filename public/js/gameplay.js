@@ -28,6 +28,7 @@ function playOn(callback){
     return
   }
   if (Global.dict[entry]){
+    Global.words++
     validWord(entry)
   }
   else if ((entry === "J"  || entry ==="JJ") && Global.jumps === 0){
