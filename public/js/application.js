@@ -10,7 +10,8 @@ var Global = {
   currentlyShifting: false,
   currentlyUsingAllJumps: false,
   gameOverAnimationStarted: false,
-  gameOverAnimationComplete: false
+  gameOverAnimationComplete: false,
+  lettersEntered: ""
 }
 
 $.get( "/dictionary5.txt", function( txt ) {
