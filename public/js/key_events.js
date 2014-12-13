@@ -1,6 +1,12 @@
 function setKeyEvents(){
   $( "#inputz" ).keypress(function() {
 
+    if(event.which === 0 || event.which === 32){
+      $( "#inputz" ).val("j")
+      $( "#formz" ).submit()
+      console.log("lol")
+    }
+
     if ( (event.which == 74 || event.which == 106) && $( "#inputz" ).val().length === 0) {
      $( "#inputz" ).css("color","red")
    }
@@ -10,7 +16,7 @@ function setKeyEvents(){
     if ($( "#inputz" ).val().length >= 5){
       $( "#inputz" ).css("color","#34007F")
     }
-    if ($( "#inputz" ).val().length <5 && $( "#inputz" ).val().toUpperCase()!="J" && $( "#inputz" ).val().toUpperCase()!="JJ"){
+    if ($( "#inputz" ).val().length <5 && $( "#inputz" ).val().toUpperCase()!="J"){
       $( "#inputz" ).css("color","gray")
     }
   })
