@@ -2,7 +2,12 @@ function setKeyEvents(){
   $( "#inputz" ).keypress(function() {
 
     if(event.which === 0 || event.which === 32){
-      if (!Global.currentlyShifting && !Global.currentlyUsingAllJumps  && !Global.gameOverAnimationStarted) jump()
+      $("#inputz").val("")
+      if (Global.jumps > 0){
+        if (!Global.currentlyShifting && !Global.currentlyUsingAllJumps  && !Global.gameOverAnimationStarted) jump()
+      } else {
+        $('#statusz').text("no jumps")
+      } 
     }
 
     if ( (event.which == 74 || event.which == 106) && $( "#inputz" ).val().length === 0) {
@@ -11,6 +16,7 @@ function setKeyEvents(){
  })
 
   $( "#inputz" ).keyup(function() {
+    if ($("#inputz").val() === " ") $("#inputz").val("")
     if ($( "#inputz" ).val().length >= 5){
       $( "#inputz" ).css("color","#34007F")
     }

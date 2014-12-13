@@ -28,7 +28,7 @@ function playOn(callback){
     Global.words++
     validWord(entry)
   }
-  else if ((entry === "J"  || entry ==="JJ") && Global.jumps === 0){
+  else if ((entry === "J" ) && Global.jumps === 0){
     $('#statusz').text("no jumps")
   }
   else if (entry.length <5) {
