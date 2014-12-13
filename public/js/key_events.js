@@ -2,9 +2,7 @@ function setKeyEvents(){
   $( "#inputz" ).keypress(function() {
 
     if(event.which === 0 || event.which === 32){
-      $( "#inputz" ).val("j")
-      $( "#formz" ).submit()
-      console.log("lol")
+      if (!Global.currentlyShifting && !Global.currentlyUsingAllJumps  && !Global.gameOverAnimationStarted) jump()
     }
 
     if ( (event.which == 74 || event.which == 106) && $( "#inputz" ).val().length === 0) {

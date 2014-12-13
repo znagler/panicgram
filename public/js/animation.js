@@ -12,7 +12,7 @@
       switch (integer){
       case 1:
        $('#first').css('background-color','gray')
-        $.when( $("#first").fadeOut(70)).done(function() {
+        $.when( $("#first").fadeOut(100)).done(function() {
         Animate.eat_letters(integer)
         });
         break;
@@ -48,7 +48,7 @@
     $("#last_2").text(prev.substring(3,5))
     Animate.set_hidestring_and_extras(1)
     $(".wordstring").animate(
-      {'marginLeft':"270px"},70,null,function() {
+      {'marginLeft':"270px"},100,null,function() {
         Animate.reset()})
       break
       case 2:

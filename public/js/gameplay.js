@@ -4,26 +4,23 @@ function playOn(callback){
   Global.jumps = parseInt($("#jumps").data("j"))
   var score = parseInt($("#score").data("s"))
 
-  if (entry === "JJ"  && Global.jumps>1){
+  if (entry === "J"  && Global.jumps > 1){
     Global.currentlyUsingAllJumps = true
     jump()
     jumpInterval = setInterval(function(){ 
-    jump() 
-    regenerateSmallString()
-    if (Global.jumps === 0) {
-      clearInterval(jumpInterval)
-      Global.currentlyUsingAllJumps = false
-      if (checkForWin()) winGame()
-    }
+      jump() 
+      regenerateSmallString()
+      if (Global.jumps === 0) {
+        clearInterval(jumpInterval)
+        Global.currentlyUsingAllJumps = false
+        if (checkForWin()) winGame()
+      }
     }, 150)
     return
   }
 
-  if (entry === "JJ"  && Global.jumps===1){
-    entry="J"
-  }
 
-  if (entry === "J"  && Global.jumps>0){
+  if (entry === "J"  && Global.jumps === 1){
     jump()
     return
   }
