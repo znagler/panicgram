@@ -1,71 +1,73 @@
-
-
-
-<!-- Begin Body -->
 <div class="container">
+  <center>
+    <p class="welcomestring">panicgram</p>
+  </center>
+  <center>
+    <a href="/play/25" class="btn btn-default btn-lg">Play Quick</a>
+    <a href="/play/100" class="btn btn-default btn-lg">Play Long</a>
+    <button class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">
+      Rules
+    </button>
+    <button class="btn btn-default btn-lg" data-toggle="modal" data-target="#myFaqModal">
+      FAQ
+    </button>
+    <a href="/" class="btn btn-default btn-lg">Home</a>
+  </center>
+  <%= erb :_rules_modal %>
+  <%= erb :_faq_modal %>
+  <br>
+  <div class="row">
+    <div class="col-md-3" id="leftCol">
+      <div class="well"> 
+       <p class="nav nav-stacked" >Posts</p>
+       <ul class="nav nav-stacked" id="sidebar">
+        <li><a href="#sec1">12/16/2014</a></li>
+        <li><a href="#sec2">12/8/2014</a></li>
+      </ul>
+    </div>
+  </div>  
+  <div class="blog-content col-md-9">
+   <h3 id="sec1">A couple changes</h3>
+   <h5 id="sec1">12/16/2014</h5>
+  Hey folks, two quick things I wanted to mention.<br><br>
+  <ul>
+  <li>From somebody's recommendation, jump is now spacebar and ALL jumps is now 'j'.  Makes a lot more sense, I wish I had thought of it.</li>
+  <li>If you enter your Twitter handle as your name after achieving a fastest time, then your name will show up as a link to your Twitter page.</li>
+  </ul>
+  Let me know if you want to see anything else implemented (<a href="mailto:panicgram.game@gmail.com?Subject=Hey" target="_top">panicgram.game@gmail.com</a>).  I'm happy to see some people coming back and playing
+  almost everyday.  Keep it up.
+  <br><br><br><br><br>
 
-<center>
-  <p class="welcomestring">panicgram</p>
-</center>
-<center>
-  <a href="/play/25" class="btn btn-default btn-lg">Play Quick</a>
-  <a href="/play/100" class="btn btn-default btn-lg">Play Long</a>
-<button class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">
-  Rules
-</button>
-<button class="btn btn-default btn-lg" data-toggle="modal" data-target="#myFaqModal">
-  FAQ
-</button>
-  <a href="/" class="btn btn-default btn-lg">Home</a>
-</center>
- <%= erb :_rules_modal %>
- <%= erb :_faq_modal %>
-<br>
-	<div class="row">
-  			<div class="col-md-3" id="leftCol">
-              	
-				<div class="well"> 
-								<p class="nav nav-stacked" >Posts</p>
-              	<ul class="nav nav-stacked" id="sidebar">
-                  <li><a href="#sec1">12/8/2014</a></li>
-              	</ul>
-  				</div>
+   <h3 id="sec2">Welcome</h3>
+   <h5 id="sec2">12/8/2014</h5>
+   I hope you guys are enjoying the game and not smashing your keyboards too much on annoying boards.  I am really happy with the amount of interest so far--  the game 'launched' about 5 days ago and there have already been over 2000 games played.<br><br>
 
-      		</div>  
-      		<div class="blog-content col-md-9">
-              	<h3 id="sec1">Welcome</h3>
-              	<h5 id="sec1">12/8/2014</h5>
-              	I hope you guys are enjoying the game and not smashing your keyboards too much on annoying boards.  I am really happy with the amount of interest so far--  the game 'launched' about 5 days ago and there have already been over 2000 games played.<br><br>
+   As long as people are playing, I will continue improving the game/site.  Look out for the following:
+   <ul>
+    <li>Fix a glitch on Safari</li>
+    <li>Tweet your score button</li>
+    <li>New domain/URL (ditching Heroku)</li>
+  </ul>
 
-              	As long as people are playing, I will continue improving the game/site.  Look out for the following:
-              	<ul>
-              		<li>Fix a glitch on Safari</li>
-              		<li>Tweet your score button</li>
-              		<li>New domain/URL (ditching Heroku)</li>
-              	</ul>
+  ... and some possible stuff in the future that you may see:
+  <ul>
 
-              	... and some possible stuff in the future that you may see:
-              	<ul>
+    <li>See/track all your times</li>
+    <li>Surivival mode</li>
+    <li>Play against friends</li>
+  </ul>
 
-              		<li>See/track all your times</li>
-              		<li>Surivival mode</li>
-              		<li>Play against friends</li>
-              	</ul>
-
-              	Twitter follows, shares, and feedback (<a href="mailto:panicgram.game@gmail.com?Subject=Hey" target="_top">panicgram.game@gmail.com</a>) are appreciated.  I will make
-              	Twitter shout-outs to people hitting the fastest times, and if you enter your handle as your name
-              	then I can mention you even easier.  Good luck out there.<br>
-              	-ZN
-              	<br>
-      		</div> 
-  	</div>
-  	<br><br><br>
+  Twitter follows, shares, and feedback (<a href="mailto:panicgram.game@gmail.com?Subject=Hey" target="_top">panicgram.game@gmail.com</a>) are appreciated.  I will make
+  Twitter shout-outs to people hitting the fastest times, and if you enter your handle as your name
+  then I can mention you even easier.  Good luck out there.<br>
+  -ZN
+  <br>
+</div> 
+</div>
+<br><br><br>
 <center>
   <a href="https://twitter.com/panicgram" class="twitter-follow-button" data-show-count="false">Follow @panicgram</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </center>
-
 </div>
-
-
 
