@@ -19,7 +19,6 @@ function playOn(callback){
     return
   }
 
-
   if (entry === "J"  && Global.jumps === 1){
     jump()
     return
@@ -77,6 +76,7 @@ function validWord(entry){
 }
 
 function jump(){
+    regenerateSmallString()
     Global.currentlyShifting = true
     Animate.shift(1)
     addScore(1)
