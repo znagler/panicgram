@@ -4,7 +4,10 @@ function setKeyEvents(){
     if(event.which === 0 || event.which === 32){
       $("#inputz").val("")
       if (Global.jumps > 0){
-        if (!Global.currentlyShifting && !Global.currentlyUsingAllJumps  && !Global.gameOverAnimationStarted) jump()
+        if (!Global.currentlyShifting && !Global.currentlyUsingAllJumps  && !Global.gameOverAnimationStarted){
+          jump()
+          if (checkForWin()) winGame()
+        } 
       } else {
         $('#statusz').text("no jumps")
       } 
