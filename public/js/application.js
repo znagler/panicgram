@@ -2,7 +2,7 @@ $('body').append("<center id='load'><br><br><br><br><br><br><br><br><br><br><br>
 
 var Global = {
   goal: getGoal(),
-  jumps: 30,
+  jumps: 0,
   score: 0,
   startTime: 0,
   highScore: false,
