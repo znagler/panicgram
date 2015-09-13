@@ -6,10 +6,10 @@ body {
   font-size: 14px;
   font-family: 'Open Sans', Helvetica
 }
-.scoreboard{
+/*.scoreboard{
   border-right: 1px solid #ccc;
 }
-
+*/
 .index{
   min-width: 1000px
 }

@@ -4,7 +4,7 @@
   <p class="welcomestring">panicgram</p>
 </center>
 <center>
-  <a href="/play/25" class="load-button btn btn-default btn-lg">Play Quik</a>
+  <a href="/play/25" class="load-button btn btn-default btn-lg">Play Quick</a>
   <a href="/play/100" class="load-button btn btn-default btn-lg">Play Long</a>
 <button class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">
   Rules
@@ -19,24 +19,22 @@
 <center>
     <h5>Fastest Times</h5>
 </center>
-<div class="col-md-6 col-sm-6 col-xs-6">
+<div class="col-md-12 col-sm-12 col-xs-12">
 	<center><h6>All-time</h6></center>
 </div>
-<div class="col-md-6 col-sm-6 col-xs-6">
+<!-- <div class="col-md-6 col-sm-6 col-xs-6">
 	<center><h6>Last 24 Hours</h6></center>
-</div>
- <div class="col-md-3 col-sm-3 col-xs-6">
+</div> -->
+ <div class="col-md-6 col-sm-6 col-xs-6">
 <%= erb :_high_scores, :locals => {all_scores: @scores, goal: 25,last_day_only: false}%>
  </div>
- <div class="col-md-3 col-sm-3 col-xs-6 scoreboard">
+ <div class="col-md-6 col-sm-6 col-xs-6 scoreboard">
 <%= erb :_high_scores, :locals => {all_scores: @scores, goal: 100,last_day_only: false}%>
  </div>
- <div class="col-md-3 col-sm-3 col-xs-6">
-<%= erb :_high_scores, :locals => {all_scores: @scores, goal: 25,last_day_only: true}%>
+<!--  <div class="col-md-3 col-sm-3 col-xs-6">
  </div>
  <div class="col-md-3 col-sm-3 col-xs-6">
-<%= erb :_high_scores, :locals => {all_scores: @scores, goal: 100,last_day_only: true}%>
- </div>
+ </div> -->
 <center>
   <a href="https://twitter.com/panicgram" class="twitter-follow-button" data-show-count="false">Follow @panicgram</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
